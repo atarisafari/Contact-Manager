@@ -5,16 +5,27 @@
 .header{
 	background-color: #16242B;
 	color: white;
-	padding-top: 400px;
-	padding-bottom: 400px;
-	padding-left: 150px;
+	padding-top: 280px;
+	padding-bottom: 330px;
+	padding-left: 350px;
+}
+
+.header h1{
+	font-size: 100pt;
+	margin-left: -100px;
+
 }
 
 .login{
 	padding-left: 700px;
-	margin-top: -150px;
+	margin-top: -370px;
 }
 
 .form-group{
 	width: 300px;
 }
+
+img{
+	width: 250px;
+	height: 250px;
+	margin-bottom: 100px;

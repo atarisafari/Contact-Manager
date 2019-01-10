@@ -1,0 +1,20 @@
+.navbar{
+	background-color: #0DFFD3;
+}
+
+.header{
+	background-color: #16242B;
+	color: white;
+	padding-top: 400px;
+	padding-bottom: 400px;
+	padding-left: 150px;
+}
+
+.login{
+	padding-left: 700px;
+	margin-top: -150px;
+}
+
+.form-group{
+	width: 300px;
+}

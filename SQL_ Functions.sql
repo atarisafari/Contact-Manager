@@ -58,6 +58,8 @@ WHERE groups.group_id = 'GROUP ID HERE' AND groups.user_id = 'USER ID HERE';
 SELECT last_name, first_name, phone_number, email_address, birth_date, address
 FROM contact
 WHERE contact.user_id = 'USER ID HERE' AND KEYWORD_HERE LIKE 'INPUT TO SEARCH HERE%';
+--ORDER BY 'VARIABLE HERE';
+
 	--GROUP BY group_name:
 SELECT group_name
 FROM groups
@@ -75,6 +77,11 @@ SELECT DISTINCT COUNT(group_members.contact_id)
 FROM group_members
 WHERE group_members.group_id = 'GROUP ID HERE' AND group_members.user_id = 'USER ID HERE';
 
+--GET USER ID AFTER VALIDATING CREDENTIALS OF USERNAME AND PASSWORD
+SELECT user_id
+FROM user_info
+WHERE username = 'Username HERE' AND passwordHash = 'HashedPaswword HERE'
+LIMIT 1;
 
 --WARNING NEXT COMAND IS TO ERRASE ALL CONTENT IN THE DATABASE
 DROP TABLE *;

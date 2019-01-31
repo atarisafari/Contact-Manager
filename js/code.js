@@ -1,6 +1,8 @@
 var userID = 0;
 var userName = "";
 var password = "";
+//magical string for verification
+var magicString = "FuckOffCunt";
 //need to get the url for the site, it goes here
 //var url = '';
 
@@ -28,8 +30,10 @@ function login()
 	{
 		alert("How can you sign in without a password? Type one in!");
 	}
+	
+	var passwordHash = CryptoJS.AES.encrpty(magicString, password);
 
-	var jsonPayload = '{"login" : "' + userName + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"login" : "' + userName + '", "password" : "' + passwordHash + '"}';
 	//var url = url + '/Login.' + extension;
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);

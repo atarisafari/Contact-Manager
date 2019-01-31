@@ -51,4 +51,70 @@ function validateLogin(JSONpackage){
 	con.end(err);
 }
 
- 
+//this not done
+function addNewUser(JSONpackage){
+	
+	//depack this shit
+	var userCreds = JSON.parse(JSONpackage);
+	
+	//connection to the server
+	con.connection(function(err){
+		if err{
+			throw err;
+		}
+	});
+	
+	//add a new user into the table
+	//con.query("INSERT INTO user_info ")
+	
+	con.end(err);
+}
+
+//get back contact into
+function getContacts(JSONpackage){
+	
+	//depack this shit
+	var Thing = JSON.parse(JSONpackage);
+	
+	//connection to the server
+	con.connection(function(err){
+		if err{
+			throw err;
+		}
+	});
+
+	con.end(err);
+}
+
+//edit contact info 
+function editContact(JSONpackage){
+	
+	//depack this shit
+	var Thing = JSON.parse(JSONpackage);
+	
+	//connection to the server
+	con.connection(function(err){
+		if err{
+			throw err;
+		}
+	});
+
+	con.end(err);
+}
+
+//add some contact into the database
+function addContact(JSONpackage){
+	
+	//depack this shit
+	var Thing = JSON.parse(JSONpackage);
+	
+	//connection to the server
+	con.connection(function(err){
+		if err{
+			throw err;
+		}
+	});
+
+	con.end(err);
+	
+}

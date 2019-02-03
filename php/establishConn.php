@@ -3,7 +3,7 @@
 $url = "localhost";
 $database = "ContactManager";
 $username = "eef";
-$password = "";
+$password = "1Otrix.never,";
 
 $conn = new mysqli($url, $username, $password, $database);
 

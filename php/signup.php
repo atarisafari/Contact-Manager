@@ -15,7 +15,11 @@ $firstname =
 $lastname = 
 $username =
 $password =
-$sql->execute
+$sql->execute();
 */
+
+$sql->close();
+$conn->close();
+
 
 ?>

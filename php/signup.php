@@ -9,6 +9,7 @@ $sql->bind_param("ssss", $firstname, $lastname, $username, $password);
 /*
 
 Get data from the JSON post
+Check if username is taken
 
 Set parameters and execute
 $firstname = 

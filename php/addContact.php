@@ -8,7 +8,7 @@ $sql->bind_param("ssssss", $lastname, $firstname, $phoneNumber, $email, $birthda
 /*
 
 Receive JSON package from POST and assign to variables
-$obj = json_decode(file_get_contents('php://input'), true);
+$in = json_decode(file_get_contents('php://input'), true);
 
 
 Set parameters and execute

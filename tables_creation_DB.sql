@@ -6,7 +6,7 @@ CREATE TABLE user_info(
 	last_name VARCHAR(40) NOT NULL,
 	username VARCHAR(30) UNIQUE NOT NULL, --This entry needs to be unique
 	--passwordSalt VARCHAR(20) NOT NULL, 
-	passwordHash VARCHAR(20) NOT NULL, --NOT NULL to force a password
+	passwordHash VARCHAR(40) NOT NULL, --NOT NULL to force a password
 	PRIMARY KEY (user_id)
 );
 

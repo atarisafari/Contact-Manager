@@ -1,8 +1,8 @@
 var userID = 0;
 var userName = "";
 var password = "";
-//need to get the url for the site, it goes here
-//var url = '';
+var root = "157.230.80.84/php";
+var extension = ".php";
 
 function signup()
 {

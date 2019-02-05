@@ -1,6 +1,6 @@
 function doLogin() {
 
-	userID = 0;;
+	userID = 0;
 
 	var username = document.getElementById("userLogin").value;
 	var password = md5(document.getElementById("userPassword").value);
@@ -42,6 +42,7 @@ function doLogin() {
 }
 
 function doLogout() {
+	userID = 0;
 }
 
 function addContact() {

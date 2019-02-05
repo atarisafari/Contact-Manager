@@ -147,4 +147,3 @@ function deleteContacts()
   // To prevent page refresh
   return false;
 }
-https://github.com/matthewgarrison/COP4331-Small-Project/blob/master/src/scripts/code.js

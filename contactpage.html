@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="js/code.js"></script>
+  
   <link rel="stylesheet" href="contactpage.css">
   <meta charset="utf-8"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 <body>
 
   <nav class="navbar">
-    <a class="navbar-brand mb-0 h1" href="index.html" >Home</a>
+    <a class="navbar-brand mb-0 h1"  >Home</a>
   </nav>
 
 <div class="header">
@@ -23,10 +23,59 @@
   <!-- this is reserving the space for column of contact info -->
     <h3 id="topInfo"> Welcome back!</h3>
 
-    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add</a>
+    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
+
+    <a href="index.html" id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
 
   <div class="contacts info">
   </div>
+
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title">Add Contact</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">First Name</label>
+    <input type="firstNameAdd" class="form-control" id="exampleInputPassword1" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Last Name</label>
+    <input type="password" class="form-control" id="lastNameAdd" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Phone Number</label>
+    <input type="password" class="form-control" id="phoneNumberAdd" placeholder="Phone Number">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Birthdate</label>
+    <input type="password" class="form-control" id="birthDateAdd" placeholder="Birthdate">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Address</label>
+    <input type="password" class="form-control" id="addressAdd" placeholder="Address">
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-default">Add</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>
 
 </body>

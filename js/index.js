@@ -3,7 +3,7 @@ var baseURL = "http://cop4331-2.com/API"
 var userID = 0;
 
 $(document).ready(function() {
-	$('#form-password').keydown(function (event) {
+	$('#userPassword').keydown(function (event) {
 	    var keypressed = event.keyCode || event.which;
 	    if (keypressed == 13) {
 	        doLogin();

@@ -1,3 +1,35 @@
+var baseURL = "http://cop4331-2.com/API"
+
+var userID = 0;
+
+$(document).ready(function() {
+	$('#form-password').keydown(function (event) {
+	    var keypressed = event.keyCode || event.which;
+	    if (keypressed == 13) {
+	        doLogin();
+	    }
+	});
+});
+
+$(document).ready(function() {
+	$('#form-password-confirm').keydown(function (event) {
+	    var keypressed = event.keyCode || event.which;
+	    if (keypressed == 13) {
+	        signup();
+	    }
+	});
+});
+
+$(document).ready(function() {
+	$('#search-username').keydown(function (event) {
+	    var keypressed = event.keyCode || event.which;
+	    if (keypressed == 13) {
+	        searchContacts();
+	        return false;
+	    }
+	});
+});
+
 function doLogin() {
 
 	userID = 0;

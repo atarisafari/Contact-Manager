@@ -33,7 +33,7 @@ $(document).ready(function() {
 fucntion doSignUp(){
 	//make sure to store the users username and password for log in 
 	var userName = document.getElementById("userLogin").value;
-	var password = document.getElementById("userPassword").value
+	var password = document.getElementById("userPassword").value;
 }
 
 function doLogin() {

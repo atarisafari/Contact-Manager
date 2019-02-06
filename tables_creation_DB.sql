@@ -25,19 +25,19 @@ CREATE TABLE contact (
 	--records in the child table will automatically be deleted.
 );
 
-CREATE TABLE groups(
-	group_id INT AUTO_INCREMENT,
-	group_name VARCHAR(40) NOT NULL;
-	user_id INT NOT NULL,--foreign key
-	PRIMARY KEY (group_id),
-	FOREIGN KEY(user_id) REFERENCES user_info(user_id) ON DELETE CASCADE
-);
+--CREATE TABLE groups(
+--	group_id INT AUTO_INCREMENT,
+--	group_name VARCHAR(40) NOT NULL;
+--	user_id INT NOT NULL,--foreign key
+--	PRIMARY KEY (group_id),
+--	FOREIGN KEY(user_id) REFERENCES user_info(user_id) ON DELETE CASCADE
+--);
 
-CREATE TABLE group_members(
-	group_id INT NOT NULL,--foreign key
-	user_id INT NOT NULL,--foreign key
-	contact_id INT NOT NULL, --foreign key
-	FOREIGN KEY(user_id) REFERENCES user_info(user_id) ON DELETE CASCADE,
-	FOREIGN KEY(group_id) REFERENCES groups(group_id) ON DELETE CASCADE,
-	FOREIGN KEY(contact_id) REFERENCES contact(contact_id) ON DELETE CASCADE,
-);
+--CREATE TABLE group_members(
+--	group_id INT NOT NULL,--foreign key
+--	user_id INT NOT NULL,--foreign key
+--	contact_id INT NOT NULL, --foreign key
+--	FOREIGN KEY(user_id) REFERENCES user_info(user_id) ON DELETE CASCADE,
+--	FOREIGN KEY(group_id) REFERENCES groups(group_id) ON DELETE CASCADE,
+--	FOREIGN KEY(contact_id) REFERENCES contact(contact_id) ON DELETE CASCADE,
+--);

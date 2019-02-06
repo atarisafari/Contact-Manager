@@ -5,13 +5,13 @@
 .header{
 	background-color: #16242B;
 	color: white;
-	padding-top: 280px;
+	padding-top: 200px;
 	padding-bottom: 160px;
 	padding-left: 250px;
 }
 
 .header h1{
-	font-size: 100pt;
+	font-size: 50pt;
 	margin-left: -100px;
 
 }

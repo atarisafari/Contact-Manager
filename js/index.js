@@ -30,6 +30,10 @@ $(document).ready(function() {
 	});
 });
 
+fucntion doSignUp(){
+	
+}
+
 function doLogin() {
 
 	userID = 0;
@@ -79,12 +83,12 @@ function doLogout() {
 
 function addContact() {
   // Get from the HTML fields
-   var firstname = document.getElementById('').value;
-   var lastname = document.getElementById('').value;
-   var phone_number = document.getElementById('').value;
-   var email = document.getElementById('').value;
-   var birth_date = document.getElementById('').value;
-   var address = document.getElementById('').value;
+   var firstname = document.getElementById('firstName').value;
+   var lastname = document.getElementById('lastName').value;
+   var phone_number = document.getElementById('phoneNumber').value;
+   var email = document.getElementById('email').value;
+   var birth_date = document.getElementById('birthDate').value;
+   var address = document.getElementById('address').value;
 
    if(!firstname | !lastname) {
      console.log("Must fill out firstname and lastname in order to add a contact");
@@ -104,12 +108,12 @@ function addContact() {
    	xhr.onreadystatechange = function(){
       // Operation is complete
    		if (xhr.readyState === 4){
-  			 document.getElementById('').value = '';
-  			 document.getElementById('').value = '';
-  			 document.getElementById('').value = '';
-  			 document.getElementById('').value = '';
-  			 document.getElementById('').value = '';
-         document.getElementById('').value = '';
+  			 document.getElementById('firstName').value = '';
+  			 document.getElementById('lastName').value = '';
+  			 document.getElementById('phoneNumber').value = '';
+  			 document.getElementById('email').value = '';
+  			 document.getElementById('birthDate').value = '';
+         		 document.getElementById('address').value = '';
    		}
    	}
       xhr.send(jsonPayload);

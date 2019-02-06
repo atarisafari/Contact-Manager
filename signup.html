@@ -14,7 +14,7 @@
 <body>
 
   <nav class="navbar">
-    <span class="navbar-brand mb-0 h1">Home</span>
+    <span class="navbar-brand mb-0 h1">Contact Managing System (C.M.S.)</span>
   </nav>
 
   <div class="header">  
@@ -22,21 +22,10 @@
     <h1>Sign Up</h1>
 
     <form>
-      <div class="form-row">
-        <div class="col">
-          <input id="userFirstNameSignUp" type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-          <input id="userLastNameSignUp" type="text" class="form-control" placeholder="Last name">
-        </div>
-      </div>
 
       <div class="form-row">
         <div class="col">
           <input id="usernameSignUp" type="text" class="form-control" placeholder="Username">
-        </div>
-        <div class="col">
-          <input id="userEmailSignUp" type="text" class="form-control" placeholder="Email">
         </div>
       </div>
 
@@ -44,19 +33,21 @@
         <div class="col">
           <input id="passwordSignUp" type="text" class="form-control" placeholder="Password">
         </div>
+      </div>
+      
+      <div class="form-row">
         <div class="col">
-          <input id="passwordSignUpConfirmation" type="text" class="form-control" placeholder="Confirm Password">
+          <input id="userPasswordConfirm" type="text" class="form-control" placeholder="Confirm Password">
         </div>
       </div>
 
     </form>
-
-    <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign-Up</a>
+    
+    <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doSignUp()">Sign-Up</a>
   </div>
 
 
 
 </body>
 </html>
-
 

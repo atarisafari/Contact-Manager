@@ -31,3 +31,10 @@ img{
 	width: 250px;
 	height: 250px;
 	margin-bottom: 100px;
+}
+
+p {
+	color: red;
+	font-size: 25pt
+}
+

@@ -2,8 +2,8 @@
 
 CREATE TABLE user_info(
 	user_id INT AUTO_INCREMENT,--PRIMARY KEY, and it increaments automatically
-	first_name VARCHAR(40) NOT NULL,
-	last_name VARCHAR(40) NOT NULL,
+	--first_name VARCHAR(40) NOT NULL,
+	--last_name VARCHAR(40) NOT NULL,
 	username VARCHAR(30) UNIQUE NOT NULL, --This entry needs to be unique
 	--passwordSalt VARCHAR(20) NOT NULL, 
 	passwordHash VARCHAR(40) NOT NULL, --NOT NULL to force a password

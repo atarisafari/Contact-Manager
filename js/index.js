@@ -32,8 +32,8 @@ $(document).ready(function() {
 
 fucntion doSignUp(){
 	//make sure to store the users username and password for log in 
-	var userName = document.getElementById("userLogin").value;
-	var password = document.getElementById("userPassword").value;
+	var userName = document.getElementById("usernameSignUp").value;
+	var password = document.getElementById("passwordSignUp").value;
 	var passwordConfirm = document.getElementById("userPasswordConfirm").value;
 	if (password !== passwordConfirm) {
 		document.getElementById('passwordCompareAndCreateResult').innerHTML = "Your passwords do not match. Please try again.";

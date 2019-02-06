@@ -169,3 +169,4 @@ function md5 ( str ) {
 
     return temp.toLowerCase();
 } 
+export default md5;

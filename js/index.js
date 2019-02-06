@@ -34,7 +34,7 @@ fucntion doSignUp(){
 	//make sure to store the users username and password for log in 
 	var userName = document.getElementById("userLogin").value;
 	var password = document.getElementById("userPassword").value;
-	var passwordConfirm = document.getElementById("form-password-confirm").value;
+	var passwordConfirm = document.getElementById("userPasswordConfirm").value;
 	if (password !== passwordConfirm) {
 		document.getElementById('passwordCompareAndCreateResult').innerHTML = "Your passwords do not match. Please try again.";
 		return;

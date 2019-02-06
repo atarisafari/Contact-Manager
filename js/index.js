@@ -36,13 +36,13 @@ fucntion doSignUp(){
 	var password = document.getElementById("passwordSignUp").value;
 	var passwordConfirm = document.getElementById("userPasswordConfirm").value;
 	if (password !== passwordConfirm) {
-		document.getElementById('passwordCompareAndCreateResult').innerHTML = "Your passwords do not match. Please try again.";
+		document.getElementById('passwordCompareResult').innerHTML = "Your passwords do not match. Please try again.";
 		return;
 	}
 
 	password = md5(password);
 
-	document.getElementById("passwordCompareAndCreateResult").innerHTML = "";
+	document.getElementById("passwordCompareResult").innerHTML = "";
 
 	// replace with appropriate varaible names
 	var payload = '{"username" : "' + userName + '", "password" : "' + password + '"}';
@@ -58,13 +58,13 @@ fucntion doSignUp(){
 		var error = data.error;
 
 		if(error !== "") {
-			document.getElementById('passwordCompareAndCreateResult').innerHTML = error;
+			document.getElementById('passwordCompareResult').innerHTML = error;
 			return;
 		}
 	}
 	catch(error) {
 		// include result of creation in HTML
-		document.getElementById('passwordCompareAndCreateResult').innerHTML = error.message;
+		document.getElementById('passwordCompareResult').innerHTML = error.message;
 	}
 }
 

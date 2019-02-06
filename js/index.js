@@ -1,3 +1,4 @@
+import md5 from "md5.js"
 var baseURL = "http://cop4331-2.com/API"
 
 var userID = 0;

@@ -45,7 +45,7 @@ fucntion doSignUp(){
 	document.getElementById("passwordCompareResult").innerHTML = "";
 
 	// replace with appropriate varaible names
-	var payload = '{"username" : "' + userName + '", "password" : "' + password + '"}';
+	var payload = '{"username" : "' + userName + '", "passwordHash" : "' + password + '"}';
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", baseURL + "/AddUser.php", false);

@@ -14,7 +14,9 @@
 <body>
 
   <nav class="navbar">
-    <a class="navbar-brand mb-0 h1"  >Home</a>
+    <a class="navbar-brand mb-0 h1">Contact Management System (C.M.S.)</a>
+    
+   	<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doLogout()">Logout</a>
   </nav>
 
 <div class="header">
@@ -23,10 +25,7 @@
   <!-- this is reserving the space for column of contact info -->
     <h3 id="topInfo"> Welcome back!</h3>
 
-    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
-
-    <a href="index.html" id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
-
+   
   <div class="contacts info">
   </div>
 
@@ -41,41 +40,70 @@
       </div>
       <div class="modal-body">
         <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">First Name</label>
-    <input type="firstNameAdd" class="form-control" id="exampleInputPassword1" placeholder="First Name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Last Name</label>
-    <input type="password" class="form-control" id="lastNameAdd" placeholder="Last Name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Phone Number</label>
-    <input type="password" class="form-control" id="phoneNumberAdd" placeholder="Phone Number">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Birthdate</label>
-    <input type="password" class="form-control" id="birthDateAdd" placeholder="Birthdate">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Address</label>
-    <input type="password" class="form-control" id="addressAdd" placeholder="Address">
-  </div>
-</form>
+		  <!--<div class="form-group">
+		    <label for="exampleInputEmail1">Email address</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>-->
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">First Name</label>
+		    <input type="firstName" class="form-control" id="firstName" placeholder="First Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="lastName">Last Name</label>
+		    <input type="password" class="form-control" id="lastName" placeholder="Last Name">
+		  </div>
+		  <div class="form-group">
+		    <label for="phoneNumber">Phone Number</label>
+		    <input type="password" class="form-control" id="phoneNumber" placeholder="Phone Number">
+		  </div>
+		  <div class="form-group">
+		    <label for="birthDate">Birthdate</label>
+		    <input type="password" class="form-control" id="birthDate" placeholder="Birthdate">
+		  </div>
+		  <div class="form-group">
+		    <label for="email">Email</label>
+		    <input type="password" class="form-control" id="email" placeholder="Email">
+		  </div>
+		  <div class="form-group">
+		    <label for="Address">Address</label>
+		    <input type="password" class="form-control" id="address" placeholder="Address">
+		  </div>
+		</form>
       </div>
-      <div class="modal-footer">
-      	<button type="button" class="btn btn-default">Add</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer">
+      	  <button type="button" class="btn btn-default" onclick="addContact()" data-dismiss="modal">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
+<!--Search Bar and Search Button-->
+  <div class="searchBar">
+	<label for="search">Search Contact:</label>
+	<input type="text"  class="form-control" id="search"  placeholder="Search"><br>
+	<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
+	
+	<script>
+		var input = document.getElementById("search");
+
+		// Execute a function when the user releases a key on the keyboard
+		input.addEventListener("keyup", function(event) {
+			// Cancel the default action, if needed
+			event.preventDefault();
+			// Number 13 is the "Enter" key on the keyboard
+			if (event.keyCode === 13) {
+				// Trigger the button element with a click
+				document.getElementById("searchButton").click();
+			}
+		});
+		
+	</script>	
+  </div>
+  
+   <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
+   
 </div>
 
 </body>

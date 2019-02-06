@@ -61,9 +61,6 @@ fucntion doSignUp(){
 			document.getElementById('passwordCompareAndCreateResult').innerHTML = error;
 			return;
 		}
-
-		// return the to login page
-		window.location.href = "http://cop4331-2.com/";
 	}
 	catch(error) {
 		// include result of creation in HTML

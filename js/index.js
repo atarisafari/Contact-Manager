@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$('#form-password-confirm').keydown(function (event) {
+	$('#userPasswordConfirm').keydown(function (event) {
 	    var keypressed = event.keyCode || event.which;
 	    if (keypressed == 13) {
 	        signup();
@@ -22,7 +22,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$('#search-username').keydown(function (event) {
+	$('#search').keydown(function (event) {
 	    var keypressed = event.keyCode || event.which;
 	    if (keypressed == 13) {
 	        searchContacts();

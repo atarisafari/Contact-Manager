@@ -1,7 +1,9 @@
-import {md5} from 'md5.js';
+// import {md5} from 'md5.js';
 var baseURL = "157.230.80.84/php"
 
 var userID = 0;
+
+console.log(window);
 
 $(document).ready(function() {
 	$('#userPassword').keydown(function (event) {
@@ -16,7 +18,8 @@ $(document).ready(function() {
 	$('#userPasswordConfirm').keydown(function (event) {
 	    var keypressed = event.keyCode || event.which;
 	    if (keypressed == 13) {
-	        signup();
+					// signup();
+					doSignUp();
 	    }
 	});
 });
@@ -28,6 +31,22 @@ $(document).ready(function() {
 	        searchContacts();
 	        return false;
 	    }
+	});
+});
+
+// doing this line below makes sure the code runs
+// after the DOM tree has loaded into memory
+$(document).ready(function(){
+	// here im looking for the element in the DOM tree that
+	// has the id of 'signup-button' denoted by the # symbole
+	// and attach the click event
+	$('#signup-button').click(function(e){
+		// below we want to stop the default behavior for happening
+		// when submitting a form
+		e.preventDefault();
+
+		// invoke func
+		doSignUp();
 	});
 });
 
@@ -49,7 +68,7 @@ function doSignUp(){
 	var payload = '{"username" : "' + userName + '", "passwordHash" : "' + password + '"}';
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", baseURL + "/AddUser.php", false);
+	xhr.open("POST", baseURL + "/signup.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 
 	try {

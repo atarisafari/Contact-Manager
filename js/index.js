@@ -1,5 +1,5 @@
 import {md5} from 'md5.js';
-var baseURL = "http://cop4331-2.com/API"
+var baseURL = "157.230.80.84/php"
 
 var userID = 0;
 

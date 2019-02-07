@@ -168,5 +168,4 @@ function md5 ( str ) {
     var temp = WordToHex(a)+WordToHex(b)+WordToHex(c)+WordToHex(d);
 
     return temp.toLowerCase();
-} 
-export default md5;
+}

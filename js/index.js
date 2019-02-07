@@ -1,5 +1,5 @@
 // import {md5} from 'md5.js';
-var baseURL = "157.230.80.84/php"
+var baseURL = "/php";
 
 var userID = 0;
 
@@ -65,14 +65,20 @@ function doSignUp(){
 	document.getElementById("passwordCompareResult").innerHTML = "";
 
 	// replace with appropriate varaible names
-	var payload = '{"username" : "' + userName + '", "passwordHash" : "' + password + '"}';
+	// var payload = '{"username" : "' + userName + '", "passwordHash" : "' + password + '"}';
+
+	// lets create the json body as an object first
+	var payload = {
+		username: userName,
+		passwordHash: password
+	};
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", baseURL + "/signup.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 
 	try {
-		xhr.send(payload);
+		xhr.send(JSON.stringify(payload));
 
 		var data = JSON.parse(xhr.responseText);
 		var error = data.error;

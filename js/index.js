@@ -74,24 +74,26 @@ function doSignUp(){
 	};
 
 	var xhr = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4)
+		{
+       			// Typical action to be performed when the document is ready:
+      			document.getElementById("demo").innerHTML = xhttp.responseText;
+    		
+			var data = JSON.parse(xhr.responseText);
+			var error = data.error;
+
+			if(error !== "")
+			{
+				document.getElementById('passwordCompareResult').innerHTML = error;
+				return;
+			}
+			// document.getElementById('passwordCompareResult').innerHTML = error.message;
+		}
+	};
 	xhr.open("POST", baseURL + "/signup.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-
-	try {
-		xhr.send(JSON.stringify(payload));
-
-		var data = JSON.parse(xhr.responseText);
-		var error = data.error;
-
-		if(error !== "") {
-			document.getElementById('passwordCompareResult').innerHTML = error;
-			return;
-		}
-	}
-	catch(error) {
-		// include result of creation in HTML
-		document.getElementById('passwordCompareResult').innerHTML = error.message;
-	}
+	xhr.send(JSON.stringify(payload));
 }
 
 function doLogin() {

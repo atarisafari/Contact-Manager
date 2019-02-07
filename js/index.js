@@ -31,7 +31,7 @@ $(document).ready(function() {
 	});
 });
 
-fucntion doSignUp(){
+function doSignUp(){
 	//make sure to store the users username and password for log in 
 	var userName = document.getElementById("usernameSignUp").value;
 	var password = document.getElementById("passwordSignUp").value;

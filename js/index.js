@@ -149,6 +149,8 @@ function doLogin() {
      		// Reset the HTML fields to blank
 		document.getElementById('userLogin').value = "";
 		document.getElementById('userPassword').value = "";
+		
+		buildTableHeader();
 	};
 
 }

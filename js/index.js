@@ -334,10 +334,9 @@ function buildTableData(data)
 
 function fillTable()
 {
-    var id = userCurrentlyLogged;
+    // var id = userCurrentlyLogged;
 
-    if(!id)
-    {
+    if(userID == 0) {
       console.log("no user is currently logged on");
       return;
     }

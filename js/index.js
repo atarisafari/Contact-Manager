@@ -55,6 +55,15 @@ function doSignUp(){
 	var userName = document.getElementById("usernameSignUp").value;
 	var password = document.getElementById("passwordSignUp").value;
 	var passwordConfirm = document.getElementById("userPasswordConfirm").value;
+	
+	if (userName == "") {
+		document.getElementById('passwordCompareResult').innerHTML = "Please enter a username.";
+		return;
+	}
+	if (password == "") {
+		document.getElementById('passwordCompareResult').innerHTML = "Please enter a password.";
+		return;
+	}
 	if (password !== passwordConfirm) {
 		document.getElementById('passwordCompareResult').innerHTML = "Your passwords do not match. Please try again.";
 		return;

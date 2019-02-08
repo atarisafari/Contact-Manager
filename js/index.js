@@ -74,7 +74,7 @@ function doSignUp(){
 	};
 
 	var xhr = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
+	xhr.onreadystatechange = function() {
     		if (this.readyState == 4)
 		{
        			// Typical action to be performed when the document is ready:

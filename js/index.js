@@ -331,3 +331,33 @@ function buildTableData(data)
         	tud.appendChild(tableRow);
 	}
 }
+
+function fillTable()
+{
+    var id = userCurrentlyLogged;
+
+    if(!id)
+    {
+      console.log("no user is currently logged on");
+      return;
+    }
+    var jsonPayload = '{"function": "getContacts", "userID" : "' + id + '"}';
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", API, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(xhr.responseText);
+                var jsonObject = JSON.parse( xhr.responseText );
+                buildTableHeader();
+                buildTableData(jsonObject.results);
+                tableData = jsonObject.results;
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch(err) {
+        console.log(err);
+    }
+}

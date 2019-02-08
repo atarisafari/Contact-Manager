@@ -277,7 +277,12 @@ function buildTableHeader()
 //     	addressHeader.innerHTML = 'Address';
 // 	var birthDateHeader = document.createElement('th');
 //     	birthDateHeader.innerHTML = 'Birthday';
-//     	var deleteHeader = document.createElement('th');
+	var showHeader = document.createElement('th');
+    	showHeader.innerHTML = 'Show';
+   	showHeader.style.visibility = 'hidden';
+   	showHeader.style.display = 'none';
+    	showHeader.id = "showHeader";
+     	var deleteHeader = document.createElement('th');
     	deleteHeader.innerHTML = 'Delete';
    	deleteHeader.style.visibility = 'hidden';
    	deleteHeader.style.display = 'none';
@@ -316,6 +321,12 @@ function buildTableData(data)
 //         	address.innerHTML = data[i].address;
 // 		var birthDate = document.createElement('td');
 //         	birthDate.innerHTML = data[i].birthDate;
+		//<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
+		var showButton = document.createElement('button');
+		showButton.innerHTML = 'Show';
+		showButton.id = "showButton";
+		showButton.class = "btn btn-default";
+		showButton.onclick = function() {searchContacts()};
         	var deleteButton = document.createElement('input');
         	deleteButton.type = "checkbox";
         	deleteButton.style.visibility = "hidden";
@@ -323,6 +334,7 @@ function buildTableData(data)
         	deleteButton.className = "deleteButton";
         	tableRow.appendChild(firstName);
         	tableRow.appendChild(lastName);
+		tableRow.appendChild(showButton);
 //         	tableRow.appendChild(phoneNumber);
 //         	tableRow.appendChild(emailAddress);
 //         	tableRow.appendChild(deleteButton);

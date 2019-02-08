@@ -118,15 +118,20 @@ function doLogin() {
 	document.getElementById("loginResult").innerHTML = "";
 
   // Setup the JSON payload to send to the API
-	var jsonPayload = '{"username" : "' + username + '", "passwordHash" : "' + password + '"}';
-	console.log("JSON Payload: " + jsonPayload);
+	//var jsonPayload = '{"username" : "' + username + '", "passwordHash" : "' + password + '"}';
+	var jsonPayload = {
+		username: username,
+		passwordHash: password
+	};
+	
+	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("POST", baseURL + "/Login.php", false);
 	xhttp.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 
 	try {
-		xhttp.send(jsonPayload);
+		xhttp.send(JSON.stringify(jsonPayload));
 		console.log("***" + xhttp.responseText);
 
 		var data = JSON.parse(xhttp.responseText);

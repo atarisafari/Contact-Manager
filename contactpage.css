@@ -40,3 +40,17 @@
 }
 
 
+.tableColumn{
+	background-color: #0DFFD3;
+	margin: 2px;
+	padding: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: -240px;
+	width: 500px;
+}
+
+.contactListHeader{
+	color: black;
+}

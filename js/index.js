@@ -78,7 +78,7 @@ function doSignUp(){
     		if (this.readyState == 4)
 		{
        			// Typical action to be performed when the document is ready:
-      			document.getElementById("demo").innerHTML = xhttp.responseText;
+      			document.getElementById("demo").innerHTML = xhr.responseText;
     		
 			var data = JSON.parse(xhr.responseText);
 			var error = data.error;

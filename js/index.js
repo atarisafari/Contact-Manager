@@ -145,7 +145,7 @@ function doLogin() {
 			document.getElementById('loginResult').innerHTML = error;
 			return;
 		}
-
+		window.location = "contactpage.html"; //Redirect to contactpage if login success
      		// Reset the HTML fields to blank
 		document.getElementById('userLogin').value = "";
 		document.getElementById('userPassword').value = "";

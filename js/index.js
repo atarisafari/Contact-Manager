@@ -269,26 +269,26 @@ function buildTableHeader()
     	firstNameHeader.innerHTML = 'First Name';
     	var lastNameHeader = document.createElement('th');
     	lastNameHeader.innerHTML = 'Last Name';
-    	var phoneNumberHeader = document.createElement('th');
-    	phoneNumberHeader.innerHTML = 'Phone Number';
-    	var emailHeader = document.createElement('th');
-    	emailHeader.innerHTML = 'Email';
-	var addressHeader = document.createElement('th');
-    	addressHeader.innerHTML = 'Address';
-	var birthDateHeader = document.createElement('th');
-    	birthDateHeader.innerHTML = 'Birthday';
-    	var deleteHeader = document.createElement('th');
+//     	var phoneNumberHeader = document.createElement('th');
+//     	phoneNumberHeader.innerHTML = 'Phone Number';
+//     	var emailHeader = document.createElement('th');
+//     	emailHeader.innerHTML = 'Email';
+// 	var addressHeader = document.createElement('th');
+//     	addressHeader.innerHTML = 'Address';
+// 	var birthDateHeader = document.createElement('th');
+//     	birthDateHeader.innerHTML = 'Birthday';
+//     	var deleteHeader = document.createElement('th');
     	deleteHeader.innerHTML = 'Delete';
    	deleteHeader.style.visibility = 'hidden';
    	deleteHeader.style.display = 'none';
-    	deleteHeader.id = "deleteHeader"
+    	deleteHeader.id = "deleteHeader";
 
     	thr.appendChild(firstNameHeader);
     	thr.appendChild(lastNameHeader);
-    	thr.appendChild(phoneNumberHeader);
-    	thr.appendChild(emailHeader);
-   	thr.appendChild(addressHeader);
-	thr.appendChild(birthDateHeader);
+//     	thr.appendChild(phoneNumberHeader);
+//     	thr.appendChild(emailHeader);
+//    	thr.appendChild(addressHeader);
+// 	thr.appendChild(birthDateHeader);
     	tud.appendChild(thr);
 }
 
@@ -308,14 +308,14 @@ function buildTableData(data)
         	firstName.innerHTML = data[i].firstName;
         	var lastName = document.createElement('td');
         	lastName.innerHTML = data[i].lastName;
-        	var phoneNumber = document.createElement('td');
-        	phoneNumber.innerHTML = data[i].phoneNumber;
-       	 	var emailAddress = document.createElement('td');
-        	emailAddress.innerHTML = data[i].emailAddress;
-		var address = document.createElement('td');
-        	address.innerHTML = data[i].address;
-		var birthDate = document.createElement('td');
-        	birthDate.innerHTML = data[i].birthDate;
+//         	var phoneNumber = document.createElement('td');
+//         	phoneNumber.innerHTML = data[i].phoneNumber;
+//        	var emailAddress = document.createElement('td');
+//         	emailAddress.innerHTML = data[i].emailAddress;
+// 		var address = document.createElement('td');
+//         	address.innerHTML = data[i].address;
+// 		var birthDate = document.createElement('td');
+//         	birthDate.innerHTML = data[i].birthDate;
         	var deleteButton = document.createElement('input');
         	deleteButton.type = "checkbox";
         	deleteButton.style.visibility = "hidden";
@@ -323,11 +323,11 @@ function buildTableData(data)
         	deleteButton.className = "deleteButton";
         	tableRow.appendChild(firstName);
         	tableRow.appendChild(lastName);
-        	tableRow.appendChild(phoneNumber);
-        	tableRow.appendChild(emailAddress);
-        	tableRow.appendChild(deleteButton);
-		tableRow.appendChild(address);
-		tableRow.appendChild(birthDate);
+//         	tableRow.appendChild(phoneNumber);
+//         	tableRow.appendChild(emailAddress);
+//         	tableRow.appendChild(deleteButton);
+// 		tableRow.appendChild(address);
+// 		tableRow.appendChild(birthDate);
         	tud.appendChild(tableRow);
 	}
 }

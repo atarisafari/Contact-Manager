@@ -259,3 +259,64 @@ function deleteContacts()
 	// To prevent page refresh
 	return false;
 }
+
+function buildTableHeader()
+{
+    var tud = document.getElementById("contactsTable");
+    tud.innerHTML = "";
+    var thr = document.createElement('tr');
+    var firstNameHeader = document.createElement('th');
+    firstNameHeader.innerHTML = 'First Name';
+    var lastNameHeader = document.createElement('th');
+    lastNameHeader.innerHTML = 'Last Name';
+    var phoneNumberHeader = document.createElement('th');
+    phoneNumberHeader.innerHTML = 'Phone Number';
+    var emailHeader = document.createElement('th');
+    emailHeader.innerHTML = 'Email Address';
+    var deleteHeader = document.createElement('th');
+    deleteHeader.innerHTML = 'Delete';
+    deleteHeader.style.visibility = 'hidden';
+    deleteHeader.style.display = 'none';
+    deleteHeader.id = "deleteHeader"
+
+    thr.appendChild(firstNameHeader);
+    thr.appendChild(lastNameHeader);
+    thr.appendChild(phoneNumberHeader);
+    thr.appendChild(emailHeader);
+    thr.appendChild(deleteHeader);
+    tud.appendChild(thr);
+}
+
+function buildTableData(data)
+{
+    var tud = document.getElementById("contactsTable");
+    var i;
+    if(!data)
+    {
+      console.log("data is not available");
+      return;
+    }
+    for (i = 0; i < data.length; i++) {
+        var tableRow = document.createElement('tr');
+        tableRow.id = data[i].contactId;
+        var firstName = document.createElement('td');
+        firstName.innerHTML = data[i].firstName;
+        var lastName = document.createElement('td');
+        lastName.innerHTML = data[i].lastName;
+        var phoneNumber = document.createElement('td');
+        phoneNumber.innerHTML = data[i].phoneNumber;
+        var emailAddress = document.createElement('td');
+        emailAddress.innerHTML = data[i].emailAddress;
+        var deleteButton = document.createElement('input');
+        deleteButton.type = "checkbox";
+        deleteButton.style.visibility = "hidden";
+        deleteButton.style.display = "none";
+        deleteButton.className = "deleteButton";
+        tableRow.appendChild(firstName);
+        tableRow.appendChild(lastName);
+        tableRow.appendChild(phoneNumber);
+        tableRow.appendChild(emailAddress);
+        tableRow.appendChild(deleteButton);
+        tud.appendChild(tableRow);
+    }
+}

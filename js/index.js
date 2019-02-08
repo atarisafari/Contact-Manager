@@ -126,31 +126,31 @@ function doLogin() {
 	
 	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
 
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST", baseURL + "/Login.php", false);
-	xhttp.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/Login.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	xhr.send(JSON.stringify(jsonPayload));
+	xhr.onreadystatechange = function() {
+		console.log("***" + xhr.responseText);
 
-	try {
-		xhttp.send(JSON.stringify(jsonPayload));
-		console.log("***" + xhttp.responseText);
-
-		var data = JSON.parse(xhttp.responseText);
+		var data = JSON.parse(xhr.responseText);
 		console.log('current user:' + data.results);
 		userID = data.user_id;
-
+		var error = data.error;
 		if(userID == 0) {
 			document.getElementById('loginResult').innerHTML = "Invalid username/password. Please try again.";
 			return;
 		}
+		if(error !== ""){
+			document.getElementById('loginResult').innerHTML = error;
+			return;
+		}
 
-     // Reset the HTML fields to blank
+     		// Reset the HTML fields to blank
 		document.getElementById('userLogin').value = "";
 		document.getElementById('userPassword').value = "";
-	}
-	catch(error) {
-		// include result of login in HTML
-		document.getElementById('loginResult').innerHTML = error.message;
-	}
+	};
+
 }
 
 function doLogout() {

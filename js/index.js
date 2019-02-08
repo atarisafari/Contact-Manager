@@ -340,23 +340,30 @@ function fillTable()
       console.log("no user is currently logged on");
       return;
     }
-    var jsonPayload = '{"function": "getContacts", "userID" : "' + id + '"}';
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", API, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    try {
-        xhr.onreadystatechange = function() {
+    //var jsonPayload = '{"function": "getContacts", "userID" : "' + id + '"}';
+	
+    var jsonPayload = {
+	user_id: userID
+    };
 
-            if (this.readyState == 4 && this.status == 200) {
-              console.log(xhr.responseText);
-                var jsonObject = JSON.parse( xhr.responseText );
-                buildTableHeader();
-                buildTableData(jsonObject.results);
-                tableData = jsonObject.results;
-            }
-        };
-        xhr.send(jsonPayload);
-    } catch(err) {
-        console.log(err);
-    }
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/grabAllContacts.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	xhr.send(JSON.stringify(jsonPayload));
+	xhr.onreadystatechange = function() {
+		if (this.readyState == 4)
+		{
+			// Typical action to be performed when the document is ready:
+			document.getElementById("contactResult").innerHTML = xhr.responseText;
+			var data = JSON.parse(xhr.responseText);
+			var error = data.error;
+			if(error !== ""){
+				document.getElementById('contactResult').innerHTML = error;
+				return;
+			}
+			buildTableHeader();
+			buildTableData(data.results);
+			//tableData = data.results			
+		}
+	};
 }

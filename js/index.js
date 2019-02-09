@@ -274,7 +274,7 @@ function searchContacts() {
 }
 
 function clearContacts(){
-    var table = document.getElementById("search-table").getElementsByTagName("tbody")[0];
+    var table = document.getElementById("contactsTable").getElementsByTagName("tbody")[0];
     var children = table.getElementsByTagName("tr");
 
     while(children.length > 1){

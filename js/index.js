@@ -107,7 +107,7 @@ function doSignUp(){
 
 function doLogin() {
 	//userID = 0;
-
+	localStorage.clear();
 	var username = document.getElementById("userLogin").value;
 	var password = md5(document.getElementById("userPassword").value);
 

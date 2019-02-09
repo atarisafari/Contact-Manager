@@ -431,11 +431,11 @@ function fillTable()
 		if (this.readyState == 4)
 		{
 			// Typical action to be performed when the document is ready:
-			document.getElementById("contactResult").innerHTML = xhr.responseText;
+			document.getElementById("addContactResult").innerHTML = xhr.responseText;
 			var data = JSON.parse(xhr.responseText);
 			var error = data.error;
 			if(error !== ""){
-				document.getElementById('contactResult').innerHTML = error;
+				document.getElementById('addContactResult').innerHTML = error;
 				return;
 			}
 			//buildTableHeader();

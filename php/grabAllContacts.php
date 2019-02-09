@@ -12,16 +12,30 @@ $userID = $input->user_id;
 
 $stmt->execute();
 $result = $statement->get_result();
+$inData = $result->fetch_all();
 
 header('Content-type: application/json');
 
-if($result->num_rows > 0)
-{
-  while($row - $result->fetch_assoc())
-  {
-    echo "First Name: " . $row["first_name"]. " - Last Name: " . $row["last_name"]. " " . $row["phone_number"]. "<br>";
-  }
-}
+	$obj='[';
+		$length=sizeof($inData);
+		
+		$i=0;
+		while ($i<$length) {
+			$object=$array[$i];
+			
+			$obj=$obj.'{"contact_id": '.$object[0].', "last_name": '.$object[1]
+			.', "first_name": "'.$object[2].'"'
+			.', "phone_number": "'.$object[3].'"'
+			.', "email_address": "'.$object[4].'"'
+			.', "birth_date": "'.$object[5].'"'
+			.', "address": "'.$object[6].'"'
+			.', "user_id": "'.$object[7].'"'
+			}';
+			if ($i+1<$length)
+				$obj = $obj.", ";
+			$i++;
+		}
+		$obj=$obj . ']';
 
 $stmt->close();
 $conn->close();

@@ -239,29 +239,22 @@ function searchContacts() {
 	//var payload = '{"search" : "' + target + '", "uID" : "' + userID + '"}';
 	var payload = {
 	user_id: userID,
-	text: targer
+	text: target
     	};
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", baseURL + "/filterContacts.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-
-	try {
-		xhr.send(payload);
-		xhr.onload = function () {
-			if (xhr.readyState === xhr.DONE) {
-				var data = JSON.parse(xhr.responseText);
-				searchResult = data.result;
-				for (str in searchResult){
-					contact = searchResult[str].split(" | ");
-					addContactRow(contact[1], contact[2], contact[3], contact[4], contact[0]);
-				}
-			}
+	xhr.send(JSON.stringify(payload));
+	xhr.onreadystatechange = function() {
+    		if (this.readyState == 4)
+		{
+       			// Typical action to be performed when the document is ready:
+      			document.getElementById("searchResult").innerHTML = xhr.responseText;
+			var data = JSON.parse(xhr.responseText);
+			clearContacts();
+			buildTableData(data.result);
 		}
-	}
-	catch(error) {
-		// include result of login in HTML
-		document.getElementById('searchResultText').innerHTML = error.message;
-	}
+	};
 }
 
 function clearContacts(){

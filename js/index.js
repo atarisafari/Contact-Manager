@@ -1,7 +1,7 @@
 // import {md5} from 'md5.js';
 var baseURL = "/php";
 
-var userID = 0;
+//var userID = 0;
 
 console.log(window);
 
@@ -106,7 +106,7 @@ function doSignUp(){
 }
 
 function doLogin() {
-	userID = 0;
+	//userID = 0;
 
 	var username = document.getElementById("userLogin").value;
 	var password = md5(document.getElementById("userPassword").value);

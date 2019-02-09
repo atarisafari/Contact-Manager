@@ -257,10 +257,10 @@ function searchContacts() {
     		if (this.readyState == 4)
 		{
        			// Typical action to be performed when the document is ready:
-      			document.getElementById("searchResult").innerHTML = xhr.responseText;
+      			//document.getElementById("searchResult").innerHTML = xhr.responseText;
 			var data = JSON.parse(xhr.responseText);
 			clearContacts();
-			buildTableData(data.result);
+			buildTableData(data);
 		}
 	};
 }
@@ -436,7 +436,7 @@ function fillTable()
 				return;
 			}
 			//buildTableHeader();
-			buildTableData(data.results);
+			buildTableData(data);
 			//tableData = data.results			
 		}
 	};

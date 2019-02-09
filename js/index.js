@@ -103,6 +103,11 @@ function doSignUp(){
 	xhr.open("POST", baseURL + "/signup.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(payload));
+	window.location = "index.html";//Redirect to indexpage 
+	// Reset the HTML fields to blank
+	document.getElementById('usernameSignUp').value = "";
+	document.getElementById('passwordSignUp').value = "";
+	document.getElementById('userPasswordConfirm').value = "";
 }
 
 function doLogin() {
@@ -339,6 +344,7 @@ function buildTableHeader()
 //     	addressHeader.innerHTML = 'Address';
 // 	var birthDateHeader = document.createElement('th');
 //     	birthDateHeader.innerHTML = 'Birthday';
+	// <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
 	var showHeader = document.createElement('th');
     	showHeader.innerHTML = 'Show';
    	showHeader.style.visibility = 'hidden';
@@ -385,9 +391,11 @@ function buildTableData(data)
 // 		var birthDate = document.createElement('td');
 //         	birthDate.innerHTML = data[i].birthDate;
 		//<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
+//data-toggle="modal" data-target="#myModal">Add</a>
 		var showButton = document.createElement('button');
 		showButton.innerHTML = 'Show';
 		showButton.id = "showButton";
+		showButton.modal("toggle");
 		showButton.class = "btn btn-default";
 		showButton.onclick = function() {searchContacts()};
         	var deleteButton = document.createElement('input');

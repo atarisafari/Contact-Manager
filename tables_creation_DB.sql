@@ -14,10 +14,10 @@ CREATE TABLE contact (
 	contact_id INT AUTO_INCREMENT,
 	last_name VARCHAR (40) DEFAULT ' ',
 	first_name VARCHAR(40) NOT NULL,
-	phone_number VARCHAR(15) ' ',
-	email_address VARCHAR(50) ' ',
-	birth_date DATE '1111-11-11',
-	address VARCHAR(100) ' ',
+	phone_number VARCHAR(15) DEFAULT ' ',
+	email_address VARCHAR(50) DEFAULT ' ',
+	birth_date VARCHAR(20) DEFAULT ' ',
+	address VARCHAR(100) DEFAULT ' ',
 	user_id INT, --foreign key
 	PRIMARY KEY (contact_id),
 	FOREIGN KEY(user_id) REFERENCES user_info(user_id) ON DELETE CASCADE

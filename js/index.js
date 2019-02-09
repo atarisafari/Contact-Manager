@@ -213,7 +213,8 @@ function addContact() {
 		document.getElementById('address').value = '';
 		
 	};
-	
+	clearContacts();
+	fillTable();
 	
 	/*
 	var jsonPayload = '{"last_name" : "' + last_name + '", "first_name" : "' + first_name + '", "phone_number" : "' + phone_number 

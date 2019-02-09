@@ -134,7 +134,7 @@ function doLogin() {
 		console.log("***" + xhr.responseText);
 
 		var data = JSON.parse(xhr.responseText);
-		console.log('current user:' + data.results);
+		//console.log('current user:' + data.results);
 		
 		// userID = data.user_id;
 

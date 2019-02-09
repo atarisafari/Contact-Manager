@@ -134,9 +134,15 @@ function doLogin() {
 
 		var data = JSON.parse(xhr.responseText);
 		console.log('current user:' + data.results);
-		userID = data.user_id;
+		
+		// userID = data.user_id;
+
+		// Store
+		localStorage.userID = data.user_id;
+
 		var error = data.error;
-		if(userID == 0) {
+		
+		if(localStorage.userID == 0) {
 			document.getElementById('loginResult').innerHTML = "Invalid username/password. Please try again.";
 			return;
 		}
@@ -155,7 +161,8 @@ function doLogin() {
 }
 
 function doLogout() {
-	userID = 0;
+	// userID = 0;
+	localStorage.clear();
 }
 
 function addContact() {

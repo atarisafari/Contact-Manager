@@ -175,13 +175,13 @@ function addContact() {
 	}
 	
 	var jsonPayload = {
-		last_name: last_name,
-		first_name: first_name,
-		phone_number, phone_number,
-		email_address, email_address,
-		birth_date, birth_date,
-		address, address,
-		user_id, userID
+		last_name: lastname,
+		first_name: firstname,
+		phone_number: phone_number,
+		email_address: email,
+		birth_date: birth_date,
+		address: address,
+		user_id: userID
 	};
 	
 	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
@@ -190,6 +190,7 @@ function addContact() {
 	xhr.open("POST", baseURL + "/addContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
+	
 	xhr.onreadystatechange = function() {
 		console.log("***" + xhr.responseText);
 
@@ -203,14 +204,14 @@ function addContact() {
 			return;
 		}
 		// Reset the HTML fields to blank
-		if (xhr.readyState === 4){
-				document.getElementById('firstName').value = '';
-				document.getElementById('lastName').value = '';
-				document.getElementById('phoneNumber').value = '';
-				document.getElementById('email').value = '';
-				document.getElementById('birthDate').value = '';
-				document.getElementById('address').value = '';
-		}	
+		
+		document.getElementById('firstName').value = '';
+		document.getElementById('lastName').value = '';
+		document.getElementById('phoneNumber').value = '';
+		document.getElementById('email').value = '';
+		document.getElementById('birthDate').value = '';
+		document.getElementById('address').value = '';
+	
 	};
 	
 	

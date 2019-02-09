@@ -126,7 +126,7 @@ function doLogin() {
 	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", baseURL + "/Login.php", true);
+	xhr.open("POST", baseURL + "/login.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
 	xhr.onreadystatechange = function() {

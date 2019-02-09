@@ -23,7 +23,7 @@
    }
 
    $retData = $response->fetch_all();
-   $payload = '{"user_id":' . $retData[0][0] . ',"username":"' . $retData[0][1] . '","password_hash":"' . $retData[0][2] . '", , "error": "'.$error.'"}';
+   $payload = '{"user_id":' . $retData[0][0] . ',"username":"' . $retData[0][1] . '","password_hash":"' . $retData[0][2] . '", "error": "'.$error.'"}';
    header('Content-type: application/json');
    echo $payload;
 

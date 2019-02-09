@@ -188,7 +188,7 @@ function addContact() {
 		email_address: email,
 		birth_date: birth_date,
 		address: address,
-		user_id: userID
+		user_id: localStorage.userID
 	};
 	
 	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
@@ -245,7 +245,7 @@ function searchContacts() {
 	
 	//var payload = '{"search" : "' + target + '", "uID" : "' + userID + '"}';
 	var payload = {
-	user_id: userID,
+	user_id: localStorage.userID,
 	text: target
     	};
 	var xhr = new XMLHttpRequest();
@@ -391,14 +391,14 @@ function fillTable()
 {
     // var id = userCurrentlyLogged;
 
-    if(userID == 0) {
+    if(localStorage.userID == 0) {
       console.log("no user is currently logged on");
       return;
     }
     //var jsonPayload = '{"function": "getContacts", "userID" : "' + id + '"}';
 	
     var jsonPayload = {
-	user_id: userID
+	user_id: localStorage.userID
     };
 
 	var xhr = new XMLHttpRequest();

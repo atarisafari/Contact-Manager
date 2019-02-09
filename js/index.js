@@ -191,28 +191,15 @@ function addContact() {
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
 	
-	xhr.onreadystatechange = function() {
-		console.log("***" + xhr.responseText);
-
-		var data = JSON.parse(xhr.responseText);
-		console.log('current user:' + data.results);
-		
-		var error = data.error;
-		
-		if(error !== ""){
-			document.getElementById('addContactResult').innerHTML = error;
-			return;
-		}
 		// Reset the HTML fields to blank
-		
-		document.getElementById('firstName').value = '';
-		document.getElementById('lastName').value = '';
-		document.getElementById('phoneNumber').value = '';
-		document.getElementById('email').value = '';
-		document.getElementById('birthDate').value = '';
-		document.getElementById('address').value = '';
-		
-	};
+
+	document.getElementById('firstName').value = '';
+	document.getElementById('lastName').value = '';
+	document.getElementById('phoneNumber').value = '';
+	document.getElementById('email').value = '';
+	document.getElementById('birthDate').value = '';
+	document.getElementById('address').value = '';
+
 	clearContacts();
 	fillTable();
 	
@@ -246,12 +233,16 @@ function addContact() {
 
 function searchContacts() {
 	clearContacts();
-   	var target = document.getElementById('search-username').value;
+   	var target = document.getElementById('search').value;
    	lastSearch = target;
 	
-	var payload = '{"search" : "' + target + '", "uID" : "' + userID + '"}';
+	//var payload = '{"search" : "' + target + '", "uID" : "' + userID + '"}';
+	var payload = {
+	user_id: userID,
+	text: targer
+    	};
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", baseURL + "/SearchContact.php", true);
+	xhr.open("POST", baseURL + "/filterContacts.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 
 	try {

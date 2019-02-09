@@ -1,0 +1,31 @@
+.navbar{
+	background-color: #0DFFD3;
+}
+
+.header h1{
+	padding-bottom: 5vw;
+	font-size: 9vw;
+	margin-top: -100px;
+}
+
+.header h3{
+	margin-left: 270px;
+}
+
+.header a{
+	margin-top: 3vw;
+	margin-left: 11vw;
+	font-size: 1.5vw;
+}
+
+.header{
+	background-color: #16242B;
+	color: white;
+	padding-top: 15vw;
+	padding-bottom: 12vw;
+	padding-left: 26vw;
+}
+
+.header .modal-content{
+	color: black;
+}

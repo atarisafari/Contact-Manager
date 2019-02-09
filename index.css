@@ -21,8 +21,6 @@
 	margin-top: -17vw;
 }
 
-
-
 .form-group{
 	width: 20vw;
 }
@@ -31,3 +29,8 @@ img{
 	width: 15vw;
 	height: 15vw;
 	margin-bottom: 5vw;
+
+@media only screen and (max-width: 768px) {
+  .header {width: 100%;}
+  .login {width: 100%;}
+}

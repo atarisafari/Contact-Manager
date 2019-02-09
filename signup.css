@@ -5,22 +5,24 @@
 .header{
 	background-color: #16242B;
 	color: white;
-	padding-top: 280px;
-	padding-bottom: 160px;
-	padding-left: 350px;
+	padding-top: 20vw;
+	padding-bottom: 10vw;
+	padding-left: 20vw;
+	background-size: 100vw;
 }
 
 .header h1{
-	padding-bottom: 100px;
-	font-size: 100pt;
+	padding-bottom: 5vw;
+	font-size: 10vw;
+	margin-top: -8vw;
 }
 
 .header a{
-	margin-left: 440px;
+	margin-left: 29vw;
 }
 
 .form-row{
-	margin-left: -50px;
-	padding-right: 340px;
-	margin-bottom: 70px;
+	margin-left: -5vw;
+	padding-right: 15vw;
+	margin-bottom: 3vw;
 }

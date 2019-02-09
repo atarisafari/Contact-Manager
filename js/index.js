@@ -361,7 +361,8 @@ function buildTableHeader()
 
 function buildTableData(data)
 {
-	var tud = document.getElementById("contactsTable").getElementsByTagName("tbody");
+	var tud = document.getElementById("contactsTable");
+	var tb = document.getElementsByTagName("tbody");
     	var i;
     	if(!data)
     	{
@@ -402,8 +403,10 @@ function buildTableData(data)
 //         	tableRow.appendChild(deleteButton);
 // 		tableRow.appendChild(address);
 // 		tableRow.appendChild(birthDate);
-        	tud.appendChild(tableRow);
+		tb.appendChild(tableRow);
+        	tud.appendChild(tb);
 	}
+	
 }
 
 function fillTable()

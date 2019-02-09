@@ -169,7 +169,7 @@ function addContact() {
 
 	if(!firstname | !lastname) {
 		console.log("Must fill out firstname and lastname in order to add a contact");
-		var errorMessage = document.getElementById("loginResult");
+		var errorMessage = document.getElementById('addContactResult');
 		errorMessage.innerHTML = "Must fill out firstname and lastname in order to add a contact";
 		return;
 	}
@@ -200,7 +200,7 @@ function addContact() {
 		var error = data.error;
 		
 		if(error !== ""){
-			document.getElementById('addContactResult').innerHTML = error;
+			document.getElementById('contactResult').innerHTML = error;
 			return;
 		}
 		// Reset the HTML fields to blank

@@ -200,7 +200,7 @@ function addContact() {
 		var error = data.error;
 		
 		if(error !== ""){
-			document.getElementById('contactResult').innerHTML = error;
+			document.getElementById('addContactResult').innerHTML = error;
 			return;
 		}
 		// Reset the HTML fields to blank
@@ -211,7 +211,7 @@ function addContact() {
 		document.getElementById('email').value = '';
 		document.getElementById('birthDate').value = '';
 		document.getElementById('address').value = '';
-	
+		
 	};
 	
 	

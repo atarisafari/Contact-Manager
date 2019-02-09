@@ -30,12 +30,13 @@ header('Content-type: application/json');
 			.', "birth_date": "'.$object[5].'"'
 			.', "address": "'.$object[6].'"'
 			.', "user_id": "'.$object[7].'"'
-			}';
+			.', "": "" }';
 			if ($i+1<$length)
 				$obj = $obj.", ";
 			$i++;
 		}
 		$obj=$obj . ']';
+echo $obj;
 
 $stmt->close();
 $conn->close();

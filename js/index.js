@@ -316,11 +316,11 @@ function buildTableHeader()
 {
 	var tud = document.getElementById("contactsTable");
     	tud.innerHTML = "";
-   	var thr = document.createElement('tr');
-    	var firstNameHeader = document.createElement('th');
-    	firstNameHeader.innerHTML = 'First Name';
-    	var lastNameHeader = document.createElement('th');
-    	lastNameHeader.innerHTML = 'Last Name';
+//    	var thr = document.createElement('tr');
+//     	var firstNameHeader = document.createElement('th');
+//     	firstNameHeader.innerHTML = 'First Name';
+//     	var lastNameHeader = document.createElement('th');
+//     	lastNameHeader.innerHTML = 'Last Name';
 //     	var phoneNumberHeader = document.createElement('th');
 //     	phoneNumberHeader.innerHTML = 'Phone Number';
 //     	var emailHeader = document.createElement('th');
@@ -342,7 +342,7 @@ function buildTableHeader()
 
     	thr.appendChild(firstNameHeader);
     	thr.appendChild(lastNameHeader);
-//     	thr.appendChild(phoneNumberHeader);
+    	thr.appendChild(phoneNumberHeader);
 //     	thr.appendChild(emailHeader);
 //    	thr.appendChild(addressHeader);
 // 	thr.appendChild(birthDateHeader);
@@ -351,7 +351,7 @@ function buildTableHeader()
 
 function buildTableData(data)
 {
-	var tud = document.getElementById("contactsTable");
+	var tud = document.getElementById("contactsTable").getElementsByTagName("tbody");
     	var i;
     	if(!data)
     	{
@@ -365,8 +365,8 @@ function buildTableData(data)
         	firstName.innerHTML = data[i].firstName;
         	var lastName = document.createElement('td');
         	lastName.innerHTML = data[i].lastName;
-//         	var phoneNumber = document.createElement('td');
-//         	phoneNumber.innerHTML = data[i].phoneNumber;
+        	var phoneNumber = document.createElement('td');
+        	phoneNumber.innerHTML = data[i].phoneNumber;
 //        	var emailAddress = document.createElement('td');
 //         	emailAddress.innerHTML = data[i].emailAddress;
 // 		var address = document.createElement('td');
@@ -425,7 +425,7 @@ function fillTable()
 				document.getElementById('contactResult').innerHTML = error;
 				return;
 			}
-			buildTableHeader();
+			//buildTableHeader();
 			buildTableData(data.results);
 			//tableData = data.results			
 		}

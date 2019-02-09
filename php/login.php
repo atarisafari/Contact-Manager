@@ -15,6 +15,7 @@
 
    if($response->num_rows == 0)
    {
+      $error = "Incorrect username or password";
       $payload='{"user_id":0, "username":"", "password_hash":"", "error": "'.$error.'"}';
       header('Content-type: application/json');
       echo $payload
@@ -22,7 +23,7 @@
    }
 
    $retData = $response->fetch_all();
-   $payload = '{"user_id":' . $retData[0][0] . ',"username":"' . $retData[0][1] . '","password_hash":"' . $retData[0][2] . '"}';
+   $payload = '{"user_id":' . $retData[0][0] . ',"username":"' . $retData[0][1] . '","password_hash":"' . $retData[0][2] . '", , "error": "'.$error.'"}';
    header('Content-type: application/json');
    echo $payload;
 

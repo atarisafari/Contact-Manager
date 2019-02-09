@@ -5,36 +5,28 @@
 .header{
 	background-color: #16242B;
 	color: white;
-	padding-top: 200px;
-	padding-bottom: 160px;
-	padding-left: 250px;
+	padding-top: 12vw;
+	padding-bottom: 6vw;
+	padding-left: 22vw;
 }
 
 .header h1{
-	font-size: 50pt;
-	margin-left: -100px;
+	font-size: 8vw;
+	margin-left: -10vw;
 
 }
 
 .login{
-	padding-left: 700px;
-	margin-top: -370px;
+	padding-left: 45vw;
+	margin-top: -17vw;
 }
 
-
-
 .form-group{
-	width: 300px;
+	width: 20vw;
 }
 
 img{
-	width: 250px;
-	height: 250px;
-	margin-bottom: 100px;
+	width: 15vw;
+	height: 15vw;
+	margin-bottom: 5vw;
 }
-
-p {
-	color: red;
-	font-size: 25pt
-}
-

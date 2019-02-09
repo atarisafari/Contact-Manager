@@ -106,7 +106,6 @@ function doSignUp(){
 }
 
 function doLogin() {
-
 	userID = 0;
 
 	var username = document.getElementById("userLogin").value;
@@ -174,6 +173,48 @@ function addContact() {
 		errorMessage.innerHTML = "Must fill out firstname and lastname in order to add a contact";
 		return;
 	}
+	
+	var jsonPayload = {
+		last_name: last_name,
+		first_name: first_name,
+		phone_number, phone_number,
+		email_address, email_address,
+		birth_date, birth_date,
+		address, address,
+		user_id, userID
+	};
+	
+	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/addContact.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	xhr.send(JSON.stringify(jsonPayload));
+	xhr.onreadystatechange = function() {
+		console.log("***" + xhr.responseText);
+
+		var data = JSON.parse(xhr.responseText);
+		console.log('current user:' + data.results);
+		
+		var error = data.error;
+		
+		if(error !== ""){
+			document.getElementById('addContactResult').innerHTML = error;
+			return;
+		}
+		// Reset the HTML fields to blank
+		if (xhr.readyState === 4){
+				document.getElementById('firstName').value = '';
+				document.getElementById('lastName').value = '';
+				document.getElementById('phoneNumber').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('birthDate').value = '';
+				document.getElementById('address').value = '';
+		}	
+	};
+	
+	
+	/*
 	var jsonPayload = '{"last_name" : "' + last_name + '", "first_name" : "' + first_name + '", "phone_number" : "' + phone_number 
 	+ '", "email_address" : "' + email_address + '", "birth_date" : "' + birth_date + '", "address" : "' + address + '", "user_id" : "' + userID + '"}';
 
@@ -198,6 +239,7 @@ function addContact() {
 	catch(error) {
 		document.getElementById('addContactResult').innerHTML = error.message;
 	}
+	*/
 }
 
 function searchContacts() {

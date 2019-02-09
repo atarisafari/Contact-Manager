@@ -24,7 +24,7 @@
 
   <!-- this is reserving the space for column of contact info -->
    <h3 id="topInfo"> Welcome back!</h3>
-	<p id="contactResult"><p>
+	<p id="searchResult"><p>
    
   <div class="contacts info">
   </div>
@@ -47,31 +47,32 @@
 		  </div>-->
 		  <div class="form-group">
 		    <label for="firstName">First Name</label>
-		    <input type="firstName" class="form-control" id="firstName" placeholder="First Name">
+		    <input type="text" class="form-control" id="firstName" placeholder="First Name">
 		  </div>
 		  <div class="form-group">
 		    <label for="lastName">Last Name</label>
-		    <input type="password" class="form-control" id="lastName" placeholder="Last Name">
+		    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
 		  </div>
 		  <div class="form-group">
 		    <label for="phoneNumber">Phone Number</label>
-		    <input type="password" class="form-control" id="phoneNumber" placeholder="Phone Number">
+		    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
 		  </div>
 		  <div class="form-group">
 		    <label for="birthDate">Birthdate</label>
-		    <input type="password" class="form-control" id="birthDate" placeholder="Birthdate">
+		    <input type="text" class="form-control" id="birthDate" placeholder="Birthdate">
 		  </div>
 		  <div class="form-group">
 		    <label for="email">Email</label>
-		    <input type="password" class="form-control" id="email" placeholder="Email">
+		    <input type="text" class="form-control" id="email" placeholder="Email">
 		  </div>
 		  <div class="form-group">
 		    <label for="Address">Address</label>
-		    <input type="password" class="form-control" id="address" placeholder="Address">
+		    <input type="text" class="form-control" id="address" placeholder="Address">
 		  </div>
 		</form>
       </div>
         <div class="modal-footer">
+	  <p id="addContactResult"><p>
       	  <button type="button" class="btn btn-primary" onclick="addContact()" data-dismiss="modal">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -125,6 +126,7 @@
 		</form>
       </div>
         <div class="modal-footer">
+	  <p id="editContactResult"><p>
 	  <button type="button" class="btn btn-danger" onclick="deleteContacts()" data-dismiss="modal">Delete</button>
       	  <button type="button" class="btn btn-primary" onclick="updateContact()" data-dismiss="modal">Save</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -149,7 +149,7 @@ function doLogin() {
 		document.getElementById('userLogin').value = "";
 		document.getElementById('userPassword').value = "";
 		
-		fillTableHeader();
+		fillTable();
 	};
 
 }

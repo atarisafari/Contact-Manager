@@ -274,6 +274,7 @@ function clearContacts(){
     }
 }
 
+// With checkbox
 function deleteContacts()
 {
 	var nodeList = document.getElementsByClassName(""); 
@@ -303,6 +304,31 @@ function deleteContacts()
 	// To prevent page refresh
 	return false;
 }
+
+/*	No checkbox
+function deleteContact(contactID) {
+
+
+	var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/DeleteContact.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+
+	try {
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState === 4){
+				document.getElementById('search-username').value = lastSearch;
+				searchContacts();
+			}
+		}
+		xhr.send(payload);
+	}
+	catch(error) {
+		alert(error.message);
+	}
+}
+*/
 
 function buildTableHeader()
 {

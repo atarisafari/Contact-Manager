@@ -11,6 +11,11 @@ body {
 	background-color: #0DFFD3;
 }
 
+#back-button{
+	font-size: 15px;
+	margin:2px;
+}
+
 .header{
 	background-color: #16242B;
 	color: white;
@@ -32,7 +37,6 @@ body {
 .header a{
 	margin-left: 440px;
 }
-
 
 .form-row{
 	margin-bottom: 70px;

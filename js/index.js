@@ -107,16 +107,17 @@ function doSignUp(){
 
 function doLogin() {
 	//userID = 0;
-	localStorage.clear();
+	if (localStorage.getItem("userID") === null) {
+		localStorage.clear();
+	}
+	
 	var username = document.getElementById("userLogin").value;
 	var password = md5(document.getElementById("userPassword").value);
 
-  // line 23	<p id = "loginResult"></p> in index.php
-  // line 234 <span id="loginResult"> </span> in index.html
-  // Ensure that the HTML login result message is blank
+  	// Ensure that the HTML login result message is blank
 	document.getElementById("loginResult").innerHTML = "";
 
-  // Setup the JSON payload to send to the API
+  	// Setup the JSON payload to send to the API
 	//var jsonPayload = '{"username" : "' + username + '", "passwordHash" : "' + password + '"}';
 	var jsonPayload = {
 		username: username,

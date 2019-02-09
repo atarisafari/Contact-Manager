@@ -272,6 +272,14 @@ function searchContacts() {
 	}
 }
 
+function clearContacts(){
+    var table = document.getElementById("search-table").getElementsByTagName("tbody")[0];
+    var children = table.getElementsByTagName("tr");
+
+    while(children.length > 1){
+        table.removeChild(children[1]);
+    }
+}
 
 function deleteContacts()
 {

@@ -83,6 +83,9 @@ function doSignUp(){
 	};
 
 	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/signup.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	xhr.send(JSON.stringify(payload));
 	xhr.onreadystatechange = function() {
     		if (this.readyState == 4)
 		{
@@ -96,18 +99,17 @@ function doSignUp(){
 			{
 				document.getElementById('passwordCompareResult').innerHTML = error;
 				return;
+			} else{
+			//Redirect to indexpage
+			window.location = "index.html"; 
 			}
+			// Reset the HTML fields to blank
+			document.getElementById('usernameSignUp').value = "";
+			document.getElementById('passwordSignUp').value = "";
+			document.getElementById('userPasswordConfirm').value = "";
 			// document.getElementById('passwordCompareResult').innerHTML = error.message;
 		}
 	};
-	xhr.open("POST", baseURL + "/signup.php", true);
-	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-	xhr.send(JSON.stringify(payload));
-	window.location = "index.html";//Redirect to indexpage 
-	// Reset the HTML fields to blank
-	document.getElementById('usernameSignUp').value = "";
-	document.getElementById('passwordSignUp').value = "";
-	document.getElementById('userPasswordConfirm').value = "";
 }
 
 function doLogin() {

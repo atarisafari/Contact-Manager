@@ -346,21 +346,21 @@ function buildTableData(data)
 		firstName.innerHTML = data[i].firstName;
 		lastName.innerHTML = data[i].lastName;
 		phoneNumber.innerHTML = data[i].phoneNumber;
-		show.id = data[i].contactId;
+// 		show.id = data[i].contactId;
 		
 //<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
 //data-toggle="modal" data-target="#myModal">Add</a>
-		var showButton = document.createElement('button');
-		showButton.innerHTML = 'More';
-		showButton.id = "showButton";
-		showButton.modal("toggle");
-		showButton.class = "btn btn-default";
-		showButton.onclick = function() {searchContacts()};
-        	var deleteButton = document.createElement('input');
-        	deleteButton.type = "checkbox";
-        	deleteButton.style.visibility = "hidden";
-        	deleteButton.style.display = "none";
-        	deleteButton.className = "deleteButton";
+// 		var showButton = document.createElement('button');
+// 		showButton.innerHTML = 'More';
+// 		showButton.id = "showButton";
+// 		showButton.modal("toggle");
+// 		showButton.class = "btn btn-default";
+// 		showButton.onclick = function() {searchContacts()};
+//         	var deleteButton = document.createElement('input');
+//         	deleteButton.type = "checkbox";
+//         	deleteButton.style.visibility = "hidden";
+//         	deleteButton.style.display = "none";
+//         	deleteButton.className = "deleteButton";
 	}
 	
 }

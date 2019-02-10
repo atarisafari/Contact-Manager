@@ -24,10 +24,17 @@ $result = $test->get_result();
 
 if($result->num_rows > 0){
   //Error, username taken
+  $payload = '{"error": "Username taken"}';
+  header('Content-type: application/json');
+  echo $payload;
 }
 
 else
   $sql->execute();
+  
+$payload = '{"error": ""}';
+header('Content-type: application/json');
+echo $payload;
 
 $sql->close();
 $test->close();

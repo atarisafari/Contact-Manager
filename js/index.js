@@ -329,48 +329,9 @@ function deleteContact(contactID) {
 }
 
 
-function buildTableHeader()
-{
-	var tud = document.getElementById("contactsTable");
-    	tud.innerHTML = "";
-//    	var thr = document.createElement('tr');
-//     	var firstNameHeader = document.createElement('th');
-//     	firstNameHeader.innerHTML = 'First Name';
-//     	var lastNameHeader = document.createElement('th');
-//     	lastNameHeader.innerHTML = 'Last Name';
-//     	var phoneNumberHeader = document.createElement('th');
-//     	phoneNumberHeader.innerHTML = 'Phone Number';
-//     	var emailHeader = document.createElement('th');
-//     	emailHeader.innerHTML = 'Email';
-// 	var addressHeader = document.createElement('th');
-//     	addressHeader.innerHTML = 'Address';
-// 	var birthDateHeader = document.createElement('th');
-//     	birthDateHeader.innerHTML = 'Birthday';
-	// <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
-	var showHeader = document.createElement('th');
-    	showHeader.innerHTML = 'Show';
-   	showHeader.style.visibility = 'hidden';
-   	showHeader.style.display = 'none';
-    	showHeader.id = "showHeader";
-     	var deleteHeader = document.createElement('th');
-    	deleteHeader.innerHTML = 'Delete';
-   	deleteHeader.style.visibility = 'hidden';
-   	deleteHeader.style.display = 'none';
-    	deleteHeader.id = "deleteHeader";
-
-    	thr.appendChild(firstNameHeader);
-    	thr.appendChild(lastNameHeader);
-    	thr.appendChild(phoneNumberHeader);
-//     	thr.appendChild(emailHeader);
-//    	thr.appendChild(addressHeader);
-// 	thr.appendChild(birthDateHeader);
-    	tud.appendChild(thr);
-}
-
 function buildTableData(data)
 {
-	var tud = document.getElementById("contactsTable");
-	var tb = document.getElementsByTagName("tbody");
+	var table = document.getElementById("contactsTable");
     	var i;
     	if(!data)
     	{
@@ -378,24 +339,20 @@ function buildTableData(data)
       		return;
     	}
     	for (i = 0; i < data.length; i++) {
-        	var tableRow = document.createElement('tr');
-        	tableRow.id = data[i].contactId;
-       	 	var firstName = document.createElement('td');
-        	firstName.innerHTML = data[i].firstName;
-        	var lastName = document.createElement('td');
-        	lastName.innerHTML = data[i].lastName;
-        	var phoneNumber = document.createElement('td');
-        	phoneNumber.innerHTML = data[i].phoneNumber;
-//        	var emailAddress = document.createElement('td');
-//         	emailAddress.innerHTML = data[i].emailAddress;
-// 		var address = document.createElement('td');
-//         	address.innerHTML = data[i].address;
-// 		var birthDate = document.createElement('td');
-//         	birthDate.innerHTML = data[i].birthDate;
-		//<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
+		var row = table.insertRow(-1);
+		var firstName = row.insertCell(0);
+		var lastName = row.insertCell(1);
+		var phoneNumber = row.insertCell(2);
+		var show = row.insertCell(3);
+		firstName.innerHTML = data[i].firstName;
+		lastName.innerHTML = data[i].lastName;
+		phoneNumber.innerHTML = data[i].phoneNumber;
+		show.id = data[i].contactId;
+		
+//<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
 //data-toggle="modal" data-target="#myModal">Add</a>
 		var showButton = document.createElement('button');
-		showButton.innerHTML = 'Show';
+		showButton.innerHTML = 'More';
 		showButton.id = "showButton";
 		showButton.modal("toggle");
 		showButton.class = "btn btn-default";
@@ -405,16 +362,6 @@ function buildTableData(data)
         	deleteButton.style.visibility = "hidden";
         	deleteButton.style.display = "none";
         	deleteButton.className = "deleteButton";
-        	tableRow.appendChild(firstName);
-        	tableRow.appendChild(lastName);
-		tableRow.appendChild(showButton);
-//         	tableRow.appendChild(phoneNumber);
-//         	tableRow.appendChild(emailAddress);
-//         	tableRow.appendChild(deleteButton);
-// 		tableRow.appendChild(address);
-// 		tableRow.appendChild(birthDate);
-		tb.appendChild(tableRow);
-        	tud.appendChild(tb);
 	}
 	
 }

@@ -354,8 +354,8 @@ function buildTableData(data)
 // 		showButton.innerHTML = 'More';
 // 		showButton.id = "showButton";
 // 		showButton.modal("toggle");
-// 		showButton.class = "btn btn-default";
-// 		showButton.onclick = function() {searchContacts()};
+// 		showButton.className += "btn btn-default";
+// 		showButton.onclick = function() {searchContacts};
 //         	var deleteButton = document.createElement('input');
 //         	deleteButton.type = "checkbox";
 //         	deleteButton.style.visibility = "hidden";
@@ -395,9 +395,8 @@ function fillTable()
 				return;
 			}
 			//buildTableHeader();
-			buildTableData(data);
-			//tableData = data.results	
-			
+			buildTableData(data.result);
+			//tableData = data.results			
 		}
 	};
 }

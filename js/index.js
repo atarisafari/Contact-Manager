@@ -273,12 +273,11 @@ function searchContacts() {
 }
 
 function clearContacts(){
-    var table = document.getElementById("contactsTable").getElementsByTagName("tbody")[0];
-    var children = table.getElementsByTagName("tr");
-
-    while(children.length > 1){
-        table.removeChild(children[1]);
-    }
+	var table = document.getElementById("contactsTable");
+	var x = document.getElementById("contactsTable").rows.length;
+	for(var i =0; i < x-1; i++){ //dont move the 0 it just works
+		table.deleteRow(-1);
+	}
 }
 
 // With checkbox

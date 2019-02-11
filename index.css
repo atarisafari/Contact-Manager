@@ -40,6 +40,12 @@ body{
 	width: 20vw;
 }
 
+#loginResult{
+  color:white;
+  padding:0;
+  margin:0;
+}
+
 .header .subheader{
 	margin-top: 4vw;
 }

@@ -354,7 +354,7 @@ function buildTableData(data)
 		showButton.innerHTML = 'More';
 		showButton.id = "showButton";
 		showButton.className += "btn btn-default";
-//		document.getElementById("showButton").addEventListener("click",searchContacts);
+		document.getElementById("showButton").addEventListener("click",searchContacts);
 // 		showButton.modal("toggle");
 		//myModalEdit
 	//---------------------

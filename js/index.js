@@ -343,14 +343,14 @@ function buildTableData(data)
 		var firstName = row.insertCell(0);
 		var lastName = row.insertCell(1);
 		var phoneNumber = row.insertCell(2);
-		var show = row.insertCell(3);
+		var showButton = row.insertCell(3);
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
 		phoneNumber.innerHTML = data[i].phone_number;
 // 		show.id = data[i].contact_id;
 //<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
 //data-toggle="modal" data-target="#myModal">Add</a>
-		var showButton = document.createElement('button');
+		showButton = document.createElement('button');
 		showButton.innerHTML = 'More';
 		showButton.id = "showButton";
 		showButton.className += "btn btn-default";

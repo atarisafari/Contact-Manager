@@ -347,15 +347,20 @@ function buildTableData(data)
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
 		phoneNumber.innerHTML = data[i].phone_number;
-// 		show.id = data[i].contact_id;
 //<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
 //data-toggle="modal" data-target="#myModal">Add</a>
 		//showButton = document.createElement('button');
 		//showButton.innerHTML = 'More';
-		var showButton = document.createElement('button');
- 		var buttonName = document.createTextNode("More");
-		showButton.appendChild(buttonName);
-  		document.body.appendChild(showButton);
+		
+		// Create the button
+  		var button = document.createElement('button');
+ 		button.id = data[i].contact_id;
+  		var buttonName = document.createTextNode("More");
+  		button.appendChild(buttonName);
+  
+ 		// Append the button
+ 		showButton.appendChild(button);
+		
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";
 //		document.getElementById("showButton").addEventListener("click",searchContacts);

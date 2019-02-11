@@ -313,7 +313,7 @@ function deleteMultipleContacts()
 }
 
 //	No checkbox
-function deleteContact(contactID) {
+function deleteContact(contactID, row) {
 
 
 	//var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
@@ -325,7 +325,8 @@ function deleteContact(contactID) {
 	xhr.open("POST", baseURL + "/deleteContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
-	searchContacts();
+	document.getElementById("contactsTable").deleteRow(row);
+	//searchContacts();
 }
 
 
@@ -359,20 +360,20 @@ function buildTableData(data)
  		button.id = data[i].contact_id;
   		var buttonName = document.createTextNode("More");
   		button.appendChild(buttonName);
-  
+  		button.className += "btn btn-info";
  		// Append the show more button
  		showButton.appendChild(button);
-		
+		showButton.addEventListener("click", diplayContact(data, data[i].contact_id));
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
  		dButton.id = data[i].contact_id;
   		var dName = document.createTextNode("Delete");
   		dButton.appendChild(dName);
-  
+  		dButton.className += "btn btn-danger";
  		// Append the delete button
  		deleteButton.appendChild(dButton);
-		document.getElementById("deleteButton").addEventListener("click",deleteContact(dButton.id));
+		deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
 	
 		
 //		showButton.id = "showButton";
@@ -414,6 +415,10 @@ function buildTableData(data)
 //         	deleteButton.style.display = "none";
 //         	deleteButton.className = "deleteButton";
 	}
+	
+}
+
+function diplayContact(data, contact_id){
 	
 }
 

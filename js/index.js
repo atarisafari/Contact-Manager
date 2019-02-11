@@ -347,16 +347,44 @@ function buildTableData(data)
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
 		phoneNumber.innerHTML = data[i].phone_number;
-// 		show.id = data[i].contactId;
+// 		show.id = data[i].contact_id;
 //<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
 //data-toggle="modal" data-target="#myModal">Add</a>
-// 		var showButton = document.createElement('button');
-// 		showButton.innerHTML = 'More';
-// 		showButton.id = "showButton";
-// 		showButton.className += "btn btn-default";
+		var showButton = document.createElement('button');
+		showButton.innerHTML = 'More';
+		showButton.id = "showButton";
+		showButton.className += "btn btn-default";
 //		document.getElementById("showButton").addEventListener("click",searchContacts);
 // 		showButton.modal("toggle");
 		//myModalEdit
+	//---------------------
+// 	// Get the modal
+// var modal = document.getElementById('myModalEdit');
+
+// // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+// // When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+}
+	//----------------------	
+		
 //         	var deleteButton = document.createElement('input');
 //         	deleteButton.type = "checkbox";
 //         	deleteButton.style.visibility = "hidden";

@@ -477,12 +477,12 @@ function diplayContact(data, contact_id){
 	document.getElementById('addressEdit').innerHTML = "";
 	document.getElementById('editContactResult').innerHTML = "";
 	//Write contacts information
-	document.getElementById('firstNameEdit').innerHTML = contact.first_name;
-	document.getElementById('lastNameEdit').innerHTML = contact.last_name;
-	document.getElementById('phoneNumberEdit').innerHTML = contact.phone_number;
-	document.getElementById('birthDateEdit').innerHTML = contact.birth_date;
-	document.getElementById('emailEdit').innerHTML = contact.email_address;
-	document.getElementById('addressEdit').innerHTML = contact.address;
+	document.getElementById('firstNameEdit').innerHTML = contact['first_name'];
+	document.getElementById('lastNameEdit').innerHTML = contact['last_name'];
+	document.getElementById('phoneNumberEdit').innerHTML = contact['phone_number'];
+	document.getElementById('birthDateEdit').innerHTML = contact['birth_date'];
+	document.getElementById('emailEdit').innerHTML = contact['email_address'];
+	document.getElementById('addressEdit').innerHTML = contact['address'];
 	localStorage.contactID = contact_id;
 }
 

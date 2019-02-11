@@ -325,7 +325,7 @@ function deleteContact(contactID, row) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", baseURL + "/deleteContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-	xhr.send(JSON.stringify(jsonPayload));
+	xhr.send(JSON.stringify(payload));
 	document.getElementById("contactsTable").deleteRow(row);
 	//searchContacts();
 }

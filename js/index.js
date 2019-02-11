@@ -382,7 +382,7 @@ function buildTableData(data)
 //   if (event.target == modal) {
 //     modal.style.display = "none";
 //   }
-}
+//}
 	//----------------------	
 		
 //         	var deleteButton = document.createElement('input');

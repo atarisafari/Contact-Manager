@@ -365,7 +365,7 @@ function buildTableData(data)
  		// Append the show more button
  		showButton.appendChild(button);
 		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
-		showButton.onclick = function() {diplayContact(data[i], data[i].contact_id)};
+		document.getElementById(button.id).onclick = function() {diplayContact(data[i], data[i].contact_id)};
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
@@ -376,7 +376,7 @@ function buildTableData(data)
  		// Append the delete button
  		deleteButton.appendChild(dButton);
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
-		deleteButton.onclick = function() {deleteContact(data[i].contact_id, (i+1))};
+		document.getElementById(dButton.id).onclick = function() {deleteContact(data[i].contact_id, (i+1))};
 		
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";

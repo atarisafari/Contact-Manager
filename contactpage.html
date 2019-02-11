@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
   <link rel="stylesheet" href="contactpage.css">
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 
   <nav class="navbar">
     <a class="navbar-brand mb-0 h1">Contact Management System (C.M.S.)</a>
-    
+
    	<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doLogout()">Logout</a>
   </nav>
 
@@ -25,7 +25,7 @@
   <!-- this is reserving the space for column of contact info -->
    <h3 id="topInfo"> Welcome back!</h3>
 	<p id="searchResult"><p>
-   
+
   <div class="contacts info">
   </div>
 
@@ -80,8 +80,8 @@
 
     </div>
   </div>
-	
-	
+
+
 <!--Edit Contact Modal Pluggin -->
 <div id="myModalEdit" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -141,7 +141,7 @@
 	<label for="search">Search Contact:</label>
 	<input type="text"  class="form-control" id="search"  placeholder="Search"><br>
 	<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
-	
+
 	<script>
 		var input = document.getElementById("search");
 
@@ -155,12 +155,14 @@
 				document.getElementById("searchButton").click();
 			}
 		});
-		
-	</script>	
+
+	</script>
   </div>
-	
-  <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
- 
+
+<div class="add">
+    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
+</div>
+
   <!--table info down here-->
   <table class="table" id="contactsTable" >
 	<thead>
@@ -172,15 +174,15 @@
 		</tr>
 	</thead>
 </table>
-  <!--<div class="table" id="contactsTable"> 
+  <!--<div class="table" id="contactsTable">
  	<div class="tableRow">
- 		<div class="tableColumn contactListHeader">Name</div>		
+ 		<div class="tableColumn contactListHeader">Name</div>
  	</div>
  	<span id="tableBody"></span>
   </div>-->
- 
+
 </div>
-	
+
 
 <script src="js/index.js"></script>
 <script> searchContacts(); </script>
@@ -188,4 +190,3 @@
 </body>
 
 </html>
-

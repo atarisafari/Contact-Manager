@@ -1,18 +1,25 @@
+
 .navbar{
 	background-color: #0DFFD3;
+}
+
+.navbar .btn{
+	height: 2em;
+	width: 4em;
+	font-size: 1vw;
 }
 
 
 .header h1{
 	padding-bottom: 100px;
-	font-size: 50pt;
-	margin-top: -280px;
-	margin-left: -240px;
+	font-size: 90pt;
+	margin-top: -100px;
+	margin-left: 30vw;
 }
 
 .header h3{
 	margin-top: -100px;
-	margin-left: -240px;
+	margin-left: 44vw;
 }
 
 .header a{
@@ -26,7 +33,6 @@
 	color: white;
 	padding-top: 280px;
 	padding-bottom: 500px;
-	padding-left: 250px;
 }
 
 .body{
@@ -36,7 +42,27 @@
 .searchBar{
 	width: 300px;
 	margin-top: 50px;
-	margin-left: -240px;
+	margin-left: 41vw;
+}
+
+.btn{
+	background: #0062cc;
+	color: white;
+	font-size: 16px;
+	padding: 10px 24px;
+	width: 8em;
+	height: 3em;
+
+}
+
+.add .btn{
+	margin-left: 51vw;
+	margin-top: -2.9vw;
+	background-color: grey;
+	margin-bottom: 5vw;
+	font-size: 16px;
+	padding: 10px 24px;
+
 }
 
 

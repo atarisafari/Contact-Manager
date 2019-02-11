@@ -359,25 +359,25 @@ function buildTableData(data)
 		
 		// Create the show more button
   		var button = document.createElement('button');
- 		//button.id = data[i].contact_id;
+ 		button.id = i*2;//data[i].contact_id;
   		var buttonName = document.createTextNode("More");
   		button.appendChild(buttonName);
   		button.className += "btn btn-info";
  		// Append the show more button
  		showButton.appendChild(button);
 		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
-		button.onclick = function() {diplayContact(data[i])};
+		document.getElementById(button.id).onclick = function() {diplayContact(data[i])};
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
- 		dButton.id = i+1; //data[i].contact_id;
+ 		dButton.id = i*2 +1; //data[i].contact_id;
   		var dName = document.createTextNode("Delete");
   		dButton.appendChild(dName);
   		dButton.className += "btn btn-danger";
  		// Append the delete button
  		deleteButton.appendChild(dButton);
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
-		dButton.onclick = function() {deleteContact(i+1)};
+		document.getElementById(dButton.id).onclick = function() {deleteContact(i+1)};
 		
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";

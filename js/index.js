@@ -270,6 +270,7 @@ function searchContacts() {
 			var data = JSON.parse(xhr.responseText);
 			clearContacts();
 			buildTableData(data);
+			//localStorage.contacts = data;
 		}
 	};
 }
@@ -369,7 +370,7 @@ function buildTableData(data)
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
- 		//dButton.id = data[i].contact_id;
+ 		dButton.id = i+1; //data[i].contact_id;
   		var dName = document.createTextNode("Delete");
   		dButton.appendChild(dName);
   		dButton.className += "btn btn-danger";

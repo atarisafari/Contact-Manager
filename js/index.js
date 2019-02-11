@@ -352,9 +352,9 @@ function buildTableData(data)
 //data-toggle="modal" data-target="#myModal">Add</a>
 		showButton = document.createElement('button');
 		showButton.innerHTML = 'More';
-		showButton.id = "showButton";
-		showButton.className += "btn btn-default";
-		document.getElementById("showButton").addEventListener("click",searchContacts);
+//		showButton.id = "showButton";
+//		showButton.className += "btn btn-default";
+//		document.getElementById("showButton").addEventListener("click",searchContacts);
 // 		showButton.modal("toggle");
 		//myModalEdit
 	//---------------------

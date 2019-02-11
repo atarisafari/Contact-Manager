@@ -364,7 +364,7 @@ function buildTableData(data)
   		button.className += "btn btn-info";
  		// Append the show more button
  		showButton.appendChild(button);
-		showButton.addEventListener("click", diplayContact(data, data[i].contact_id));
+		showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
@@ -464,10 +464,9 @@ function updateContact(){
 	searchContacts();
 }
 
-function diplayContact(data, contact_id){
+function diplayContact(contact, contact_id){
 	var popup = document.getElementById('myModalEdit');
 	popup.classList.toggle("show");
-	var contact = data.contact_id;
 	//Errase inputboxes
 	document.getElementById('firstNameEdit').innerHTML = "";
 	document.getElementById('lastNameEdit').innerHTML = "";

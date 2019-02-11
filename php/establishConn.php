@@ -2,8 +2,8 @@
 
 $url = "localhost";
 $database = "ContactManager";
-$username = "eef";
-$password = "1Otrix.never,";
+$username = "";
+$password = "";
 
 $conn = new mysqli($url, $username, $password, $database);
 

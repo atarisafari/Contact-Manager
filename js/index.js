@@ -344,6 +344,8 @@ function buildTableData(data)
 		var lastName = row.insertCell(1);
 		var phoneNumber = row.insertCell(2);
 		var showButton = row.insertCell(3);
+		var deleteButton = row.insertCell(4);
+		
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
 		phoneNumber.innerHTML = data[i].phone_number;
@@ -352,14 +354,26 @@ function buildTableData(data)
 		//showButton = document.createElement('button');
 		//showButton.innerHTML = 'More';
 		
-		// Create the button
+		// Create the show more button
   		var button = document.createElement('button');
  		button.id = data[i].contact_id;
   		var buttonName = document.createTextNode("More");
   		button.appendChild(buttonName);
   
- 		// Append the button
+ 		// Append the show more button
  		showButton.appendChild(button);
+		
+		
+		// Create the delete button
+  		var dButton = document.createElement('button');
+ 		dButton.id = data[i].contact_id;
+  		var dName = document.createTextNode("Delete");
+  		dButton.appendChild(dName);
+  
+ 		// Append the delete button
+ 		deleteButton.appendChild(dButton);
+		document.getElementById("deleteButton").addEventListener("click",deleteContact(dButton.id));
+	
 		
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";

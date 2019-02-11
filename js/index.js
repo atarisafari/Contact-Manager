@@ -150,7 +150,7 @@ function doLogin() {
 
 		var error = data.error;
 		
-		if(localStorage.userID == 0) {
+		if(data.user_id == 0) {
 			document.getElementById('loginResult').innerHTML = "Invalid username/password. Please try again.";
 			return;
 		}

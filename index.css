@@ -1,5 +1,20 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
 .navbar{
 	background-color: #0DFFD3;
+}
+
+.navbar .btn {
+	font-size: .8vw;
 }
 
 .header{
@@ -8,21 +23,26 @@
 	padding-top: 12vw;
 	padding-bottom: 6vw;
 	padding-left: 22vw;
+	height: 100%;
 }
 
 .header h1{
 	font-size: 8vw;
 	margin-left: -10vw;
-
+	margin-top: 10%;
 }
 
 .login{
-	padding-left: 45vw;
-	margin-top: -17vw;
+	padding-left: 67vw;
+	margin-top: -42vw;
 }
 
 .form-group{
 	width: 20vw;
+}
+
+.header .subheader{
+	margin-top: 4vw;
 }
 
 img{

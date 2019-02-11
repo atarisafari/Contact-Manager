@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<link rel="stylesheet" href="index.css">
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -18,34 +18,35 @@
 <body>
 	<nav class="navbar">
 		<span class="navbar-brand mb-0 h1">Contact Management System (C.M.S.)</span>
+		<a href="signup.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign-Up</a>
+	</form>
 	</nav>
 
 	<div class="header">
-		<H1 id="practice" >Contact Management</H1>
-		<H1>System</H1>
-		<H1>(C.M.S.)</H1>
+		<H1 id="practice" >One-Clique</H1>
+		<H3 class="subheader">Your contacts are a clique away!</H3>
 
-		<div class="login">
-			<img src="images/notebook.png" alt="notebook">
-			<form>
-				<div class="form-group">
-					<label for="userLogin">Username</label>
-					<input type="email"  class="form-control" id="userLogin" aria-describedby="emailHelp" placeholder="Enter email">
-					
-				</div>
-				<div class="form-group">
-					<label for="userPassword">Password</label>
-					<input type="password" class="form-control" id="userPassword" placeholder="Password">
-				</div>
-			
-				<a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doLogin()">Login</a>
+	</div>
+
+	<div class="login">
+		<img src="images/notebook.png" alt="notebook">
+		<form>
+			<div class="form-group">
+				<label for="userLogin">Username</label>
+				<input type="email"  class="form-control" id="userLogin" aria-describedby="emailHelp" placeholder="Enter email">
+
+			</div>
+			<div class="form-group">
+				<label for="userPassword">Password</label>
+				<input type="password" class="form-control" id="userPassword" placeholder="Password">
+			</div>
+
+			<a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doLogin()">Login</a>
 <!--stop href="contactpage.html"  <a href="contactpage.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="doLogin()">Login</a> -->
-				<a href="signup.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign-Up</a>
-			</form>     
+			<a href="signup.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign-Up</a>
+		</form>
 
-			<p id="loginResult"><p>
-		</div>
-
+		<p id="loginResult"><p>
 	</div>
 
 </body>

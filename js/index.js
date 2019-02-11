@@ -419,6 +419,23 @@ function buildTableData(data)
 }
 
 function diplayContact(data, contact_id){
+	var popup = document.getElementById('myModalEdit');
+	popup.classList.toggle("show");
+	//var contact = data.contact_id;
+	//Errase inputboxes
+	document.getElementById('firstNameEdit').innerHTML = "";
+	document.getElementById('lastNameEdit').innerHTML = "";
+	document.getElementById('phoneNumberEdit').innerHTML = "";
+	document.getElementById('birthDateEdit').innerHTML = "";
+	document.getElementById('emailEdit').innerHTML = "";
+	document.getElementById('addressEdit').innerHTML = "";
+	//Write contacts information
+	document.getElementById('firstNameEdit').innerHTML = data.contact_id['first_name'];
+	document.getElementById('lastNameEdit').innerHTML = data.contact_id['last_name'];
+	document.getElementById('phoneNumberEdit').innerHTML = data.contact_id['phone_number'];
+	document.getElementById('birthDateEdit').innerHTML = data.contact_id['birth_date'];
+	document.getElementById('emailEdit').innerHTML = data.contact_id['email_address'];
+	document.getElementById('addressEdit').innerHTML = data.contact_id['address'];
 	
 }
 

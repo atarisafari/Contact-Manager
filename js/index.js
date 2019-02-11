@@ -214,6 +214,7 @@ function addContact() {
 	document.getElementById('email').value = '';
 	document.getElementById('birthDate').value = '';
 	document.getElementById('address').value = '';
+	document.getElementById('addContactResult').innerHTML = "";
 	
 	searchContacts();
 // 	clearContacts();
@@ -418,6 +419,51 @@ function buildTableData(data)
 	
 }
 
+function updateContact(){
+	// Get from the HTML fields
+	var firstname = document.getElementById('firstNameEdit').value;
+   	var lastname = document.getElementById('lastNameEdit').value;
+   	var phone_number = document.getElementById('phoneNumberEdit').value;
+  	var email = document.getElementById('emailEdit').value;
+  	var birth_date = document.getElementById('birthDateEdit').value;
+   	var address = document.getElementById('addressEdit').value;
+
+	if(!firstname | !lastname) {
+		console.log("Contacts must have a First name and Lastname");
+		var errorMessage = document.getElementById('editContactResult');
+		errorMessage.innerHTML = "Contacts must have a First name and Lastname";
+		return;
+	}
+	
+	var jsonPayload = {
+		last_name: lastname,
+		first_name: firstname,
+		phone_number: phone_number,
+		email_address: email,
+		birth_date: birth_date,
+		address: address,
+		contact_id: localStorage.contactID
+	};
+	
+	console.log("JSON Payload: " + JSON.stringify(jsonPayload));
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", baseURL + "/updateContact.php", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
+	xhr.send(JSON.stringify(jsonPayload));
+	
+		// Reset the HTML fields to blank
+
+	document.getElementById('firstName').value = '';
+	document.getElementById('lastName').value = '';
+	document.getElementById('phoneNumber').value = '';
+	document.getElementById('email').value = '';
+	document.getElementById('birthDate').value = '';
+	document.getElementById('address').value = '';
+	
+	searchContacts();
+}
+
 function diplayContact(data, contact_id){
 	var popup = document.getElementById('myModalEdit');
 	popup.classList.toggle("show");
@@ -429,6 +475,7 @@ function diplayContact(data, contact_id){
 	document.getElementById('birthDateEdit').innerHTML = "";
 	document.getElementById('emailEdit').innerHTML = "";
 	document.getElementById('addressEdit').innerHTML = "";
+	document.getElementById('editContactResult').innerHTML = "";
 	//Write contacts information
 	document.getElementById('firstNameEdit').innerHTML = data.contact_id['first_name'];
 	document.getElementById('lastNameEdit').innerHTML = data.contact_id['last_name'];
@@ -436,7 +483,7 @@ function diplayContact(data, contact_id){
 	document.getElementById('birthDateEdit').innerHTML = data.contact_id['birth_date'];
 	document.getElementById('emailEdit').innerHTML = data.contact_id['email_address'];
 	document.getElementById('addressEdit').innerHTML = data.contact_id['address'];
-	
+	localStorage.contactID = contact_id;
 }
 
 function fillTable()

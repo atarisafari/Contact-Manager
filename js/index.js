@@ -314,12 +314,12 @@ function deleteMultipleContacts()
 }
 
 //	No checkbox
-function deleteContact(contactID, row) {
+function deleteContact(row) {
 
 
 	//var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
 	var payload = {
-		contact_id: contactID
+		contact_id: localStorage.contactID
     	};
 
 	var xhr = new XMLHttpRequest();
@@ -365,7 +365,7 @@ function buildTableData(data)
  		// Append the show more button
  		showButton.appendChild(button);
 		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
-		button.onclick = function() {diplayContact(data[i], data[i].contact_id)};
+		button.onclick = function() {diplayContact(data[i])};
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
@@ -376,7 +376,7 @@ function buildTableData(data)
  		// Append the delete button
  		deleteButton.appendChild(dButton);
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
-		dButton.onclick = function() {deleteContact(data[i].contact_id, (i+1))};
+		dButton.onclick = function() {deleteContact(i+1)};
 		
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";
@@ -465,7 +465,7 @@ function updateContact(){
 	searchContacts();
 }
 
-function diplayContact(contact, contact_id){
+function diplayContact(contact){
 	var popup = document.getElementById('myModalEdit');
 	popup.classList.toggle("show");
 	//Errase inputboxes
@@ -483,7 +483,7 @@ function diplayContact(contact, contact_id){
 	document.getElementById('birthDateEdit').innerHTML = contact['birth_date'];
 	document.getElementById('emailEdit').innerHTML = contact['email_address'];
 	document.getElementById('addressEdit').innerHTML = contact['address'];
-	localStorage.contactID = contact_id;
+	localStorage.contactID = contact['contact_id'];
 }
 
 function fillTable()

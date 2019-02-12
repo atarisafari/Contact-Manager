@@ -205,21 +205,26 @@ function addContact() {
 	xhr.open("POST", baseURL + "/addContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
-	
-		// Reset the HTML fields to blank
-	document.getElementById('firstName').value = '';
-	document.getElementById('lastName').value = '';
-	document.getElementById('phoneNumber').value = '';
-	document.getElementById('email').value = '';
-	document.getElementById('birthDate').value = '';
-	document.getElementById('address').value = '';
-	document.getElementById('addContactResult').innerHTML = "";
-		//Click close to close modal
-	document.getElementById("closeButtonAdd").click();
-	searchContacts();
-// 	clearContacts();
-// 	fillTable();	
-	
+	xhr.onreadystatechange = function() {
+    		if (this.readyState == 4)
+		{	
+			searchContacts();
+		// 	clearContacts();
+		// 	fillTable();
+			
+				// Reset the HTML fields to blank
+			document.getElementById('firstName').value = '';
+			document.getElementById('lastName').value = '';
+			document.getElementById('phoneNumber').value = '';
+			document.getElementById('email').value = '';
+			document.getElementById('birthDate').value = '';
+			document.getElementById('address').value = '';
+			document.getElementById('addContactResult').innerHTML = "";
+				//Click close to close modal
+			document.getElementById("closeButtonAdd").click();
+			
+		}
+	};
 }
 
 function searchContacts() {
@@ -359,21 +364,23 @@ function updateContact(){
 	xhr.open("POST", baseURL + "/updateContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(jsonPayload));
-	
-		// Reset the HTML fields to blank
-
-	document.getElementById('firstName').value = '';
-	document.getElementById('lastName').value = '';
-	document.getElementById('phoneNumber').value = '';
-	document.getElementById('email').value = '';
-	document.getElementById('birthDate').value = '';
-	document.getElementById('address').value = '';
-	document.getElementById('addContactResult').innerHTML = "";
-	searchContacts();
-	
-	//Click close to close modal
-	document.getElementById("editContactResult").click();
-	
+	xhr.onreadystatechange = function() {
+    		if (this.readyState == 4)
+		{
+				// Reset the HTML fields to blank
+			searchContacts();
+			document.getElementById('firstName').value = '';
+			document.getElementById('lastName').value = '';
+			document.getElementById('phoneNumber').value = '';
+			document.getElementById('email').value = '';
+			document.getElementById('birthDate').value = '';
+			document.getElementById('address').value = '';
+			document.getElementById('addContactResult').innerHTML = "";
+			
+				//Click close to close modal
+			document.getElementById("editContactResult").click();		
+		}
+	};
 }
 
 function diplayContact(contact){

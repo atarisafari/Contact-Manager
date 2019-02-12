@@ -317,7 +317,7 @@ function deleteMultipleContacts()
 //	No checkbox
 function deleteContact(row) {
 
-
+	console.log("Deleting: " + localStorage.contactID);
 	//var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
 	var payload = {
 		contact_id: localStorage.contactID

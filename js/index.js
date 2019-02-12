@@ -315,12 +315,12 @@ function deleteMultipleContacts()
 }
 
 //	No checkbox
-function deleteContact(row) {
+function deleteContact(contactID, row) {
 
 	console.log("Deleting: " + localStorage.contactID);
 	//var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
 	var payload = {
-		contact_id: localStorage.contactID
+		contact_id: contactID
     	};
 
 	var xhr = new XMLHttpRequest();
@@ -372,7 +372,7 @@ function buildTableData(data)
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
- 		dButton.id = i+1; //data[i].contact_id;
+ 		dButton.id = data[i].contact_id;
   		var dName = document.createTextNode("Delete");
   		dButton.appendChild(dName);
   		dButton.className += "btn btn-danger";
@@ -422,7 +422,7 @@ function buildTableData(data)
 //         	deleteButton.className = "deleteButton";
 	}
 	
-	document.getElementById(dButton.id).onclick = function() {deleteContact(dButton.id)};
+	document.getElementById(dButton.id).onclick = function() {deleteContact(this.id)};
 	
 }
 

@@ -352,15 +352,12 @@ function buildTableData(data)
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
 		phoneNumber.innerHTML = data[i].phone_number;
-//<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>
-//data-toggle="modal" data-target="#myModal">Add</a>
-		//showButton = document.createElement('button');
-		//showButton.innerHTML = 'More';
+
 		
 		
 		// Create the show more button
   		var button = document.createElement('button');
- 		button.id = i*2;//data[i].contact_id;
+ 		button.id = data[i].contact_id;
   		var buttonName = document.createTextNode("More");
   		button.appendChild(buttonName);
   		button.className += "btn btn-info";
@@ -379,7 +376,7 @@ function buildTableData(data)
  		// Append the delete button
  		deleteButton.appendChild(dButton);
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
-		//document.getElementById(dButton.id).onclick = function() {deleteContact(i+1)};
+		document.getElementById(dButton.id).onclick = function() {deleteContact(this.id, this.rowIndex)};
 		
 
 //		showButton.id = "showButton";

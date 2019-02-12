@@ -1,21 +1,14 @@
-html{
-	height: 100%;
-	width: 100%;
-}
-
-body{
-	height: 100%;
-	width: 100%;
-}
 
 .navbar{
 	background-color: #0DFFD3;
 }
 
 .navbar .btn{
-font-size: 12px;
-margin:2px;
+	height: 2em;
+	width: 4em;
+	font-size: 1vw;
 }
+
 
 .header h1{
 	padding-bottom: 100px;
@@ -52,17 +45,26 @@ margin:2px;
 	margin-left: 41vw;
 }
 
+.btn{
+	background: #0062cc;
+	color: white;
+	font-size: 16px;
+	padding: 10px 24px;
+	width: 8em;
+	height: 3em;
 
-.searchBar .btn{
-  font-size: 15px;
-  margin:2px;
-  width:40%;
 }
 
-.searchBar #addButton
-{
-  float:right;
+.add .btn{
+	margin-left: 51vw;
+	margin-top: -2.9vw;
+	background-color: grey;
+	margin-bottom: 5vw;
+	font-size: 16px;
+	padding: 10px 24px;
+
 }
+
 
 .tableColumn{
 	background-color: #0DFFD3;
@@ -77,16 +79,4 @@ margin:2px;
 
 .contactListHeader{
 	color: black;
-}
-
-#myModal{
-	color: black;
-}
-
-#addContactResult{
-	color: red;
-}
-
-#editContactResult{
-	color: red;
 }

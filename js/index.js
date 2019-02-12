@@ -207,7 +207,6 @@ function addContact() {
 	xhr.send(JSON.stringify(jsonPayload));
 	
 		// Reset the HTML fields to blank
-
 	document.getElementById('firstName').value = '';
 	document.getElementById('lastName').value = '';
 	document.getElementById('phoneNumber').value = '';
@@ -220,30 +219,8 @@ function addContact() {
 // 	clearContacts();
 // 	fillTable();
 	
-	/*
-	var jsonPayload = '{"last_name" : "' + last_name + '", "first_name" : "' + first_name + '", "phone_number" : "' + phone_number 
-	+ '", "email_address" : "' + email_address + '", "birth_date" : "' + birth_date + '", "address" : "' + address + '", "user_id" : "' + userID + '"}';
-   	var xhr = new XMLHttpRequest();
-   	xhr.open("POST", baseURL + "/addContact.php", true);
-   	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
-   	try {
-   		xhr.onreadystatechange = function(){
-			// Operation is complete
-			if (xhr.readyState === 4){
-				document.getElementById('firstName').value = '';
-				document.getElementById('lastName').value = '';
-				document.getElementById('phoneNumber').value = '';
-				document.getElementById('email').value = '';
-				document.getElementById('birthDate').value = '';
-				document.getElementById('address').value = '';
-			}
-		}
-		xhr.send(jsonPayload);
-	}
-	catch(error) {
-		document.getElementById('addContactResult').innerHTML = error.message;
-	}
-	*/
+		//Click close to close modal
+	document.getElementById("closeButtonAdd").click();
 }
 
 function searchContacts() {
@@ -392,8 +369,11 @@ function updateContact(){
 	document.getElementById('email').value = '';
 	document.getElementById('birthDate').value = '';
 	document.getElementById('address').value = '';
-	
 	searchContacts();
+	
+	//Click close to close modal
+	document.getElementById("closeButtonEdit").click();
+	
 }
 
 function diplayContact(contact){

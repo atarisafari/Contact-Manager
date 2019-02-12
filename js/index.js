@@ -379,6 +379,7 @@ function buildTableData(data)
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
 		document.getElementById(dButton.id).onclick = function() {deleteContact(i+1)};
 		
+
 //		showButton.id = "showButton";
 //		showButton.className += "btn btn-default";
 //		document.getElementById("showButton").addEventListener("click",searchContacts);

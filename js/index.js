@@ -357,7 +357,7 @@ function buildTableData(data)
 		//showButton = document.createElement('button');
 		//showButton.innerHTML = 'More';
 		
-		/*
+		
 		// Create the show more button
   		var button = document.createElement('button');
  		button.id = i*2;//data[i].contact_id;
@@ -368,7 +368,7 @@ function buildTableData(data)
  		showButton.appendChild(button);
 		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
 		document.getElementById(button.id).onclick = function() {diplayContact(data[i])};
-		*/
+	
 		
 		// Create the delete button
   		var dButton = document.createElement('button');

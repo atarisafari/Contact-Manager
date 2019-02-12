@@ -73,8 +73,8 @@
       </div>
         <div class="modal-footer">
 	  <p id="addContactResult"><p>
-      	  <button type="button" class="btn btn-primary" onclick="addContact()">Add</button>
-          <button type="closeButtonAdd" class="btn btn-default" data-dismiss="modal">Close</button>
+      	  <button type="button" class="btn btn-primary" onclick="addContact()" >Add</button>
+          <button id="closeButton" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
 
@@ -127,9 +127,8 @@
       </div>
         <div class="modal-footer">
 	  <p id="editContactResult"><p>
-	  <!--<button type="button" class="btn btn-danger" onclick="deleteContact()" data-dismiss="modal">Delete</button>-->
       	  <button type="button" class="btn btn-primary" onclick="updateContact()">Save</button>
-          <button type="closeButtonEdit" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
 
@@ -140,11 +139,10 @@
   <div class="searchBar">
 	<label for="search">Search Contact:</label>
 	<input type="text"  class="form-control" id="search"  placeholder="Search"><br>
-	<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
+	<button id="searchButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
 
 	<script>
 		var input = document.getElementById("search");
-
 		// Execute a function when the user releases a key on the keyboard
 		input.addEventListener("keyup", function(event) {
 			// Cancel the default action, if needed
@@ -155,27 +153,24 @@
 				document.getElementById("searchButton").click();
 			}
 		});
-
 	</script>
-  </div>
+  
+    <a href="#myModal" id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
 
-<div class="add">
-    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
 </div>
 
   <!--table info down here-->
-<table class="table" id="contactsTable" >
-<thead>
-<tr>
-	<th>First Name</th>
-	<th>Last Name</th>
-	<th>Phone Number</th>
-	<th id="showHeader" role="button" data-toggle="modal" data-target="#myModalEdit" style="display:none; visibility:hidden;" >Show</th>
-	<th id="deleteHeader" style="display:none; visibility:hidden;">Delete</th>
-</tr>
-</thead>
+  <table class="table" id="contactsTable" >
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Phone Number</th>
+			<th id="showHeader" role="button" data-toggle="modal" data-target="#myModalEdit" style="display:none; visibility:hidden;">Show</th>
+			<th id="deleteHeader" style="display:none; visibility:hidden;">Delete</th>
+		</tr>
+	</thead>
 </table>
-<a id="addButton" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
   <!--<div class="table" id="contactsTable">
  	<div class="tableRow">
  		<div class="tableColumn contactListHeader">Name</div>
@@ -187,7 +182,11 @@
 
 
 <script src="js/index.js"></script>
-<script> searchContacts(); </script>
+<script> 
+	$(document).ready(function() {
+		searchContacts();
+	});
+</script>
 
 </body>
 

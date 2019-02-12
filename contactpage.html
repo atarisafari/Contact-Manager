@@ -74,7 +74,7 @@
         <div class="modal-footer">
 	  <p id="addContactResult"><p>
       	  <button type="button" class="btn btn-primary" onclick="addContact()" data-dismiss="modal">Add</button>
-          <button id="closeButton" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
 
@@ -140,7 +140,7 @@
   <div class="searchBar">
 	<label for="search">Search Contact:</label>
 	<input type="text"  class="form-control" id="search"  placeholder="Search"><br>
-	<button id="searchButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
+	<button id="searchButton" class="btn btn-default" onclick="searchContacts()">Search</button>    <!--onclick="searchContacts()"-->
 
 	<script>
 		var input = document.getElementById("search");
@@ -157,9 +157,10 @@
 		});
 
 	</script>
-  
-    <a href="#myModal" id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
+  </div>
 
+<div class="add">
+    <a id="addButton" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
 </div>
 
   <!--table info down here-->
@@ -170,7 +171,6 @@
 			<th>Last Name</th>
 			<th>Phone Number</th>
 			<th id="showHeader" style="display:none; visibility:hidden;">Show</th>
-			<th id="deleteHeader" style="display:none; visibility:hidden;">Delete</th>
 		</tr>
 	</thead>
 </table>
@@ -185,11 +185,7 @@
 
 
 <script src="js/index.js"></script>
-<script> 
-	//$(document).ready(function() {
-		searchContacts();
-	//});
-</script>
+<script> searchContacts(); </script>
 
 </body>
 

@@ -214,13 +214,12 @@ function addContact() {
 	document.getElementById('birthDate').value = '';
 	document.getElementById('address').value = '';
 	document.getElementById('addContactResult').innerHTML = "";
-	
-	searchContacts();
-// 	clearContacts();
-// 	fillTable();
-	
 		//Click close to close modal
 	document.getElementById("closeButtonAdd").click();
+	searchContacts();
+// 	clearContacts();
+// 	fillTable();	
+	
 }
 
 function searchContacts() {
@@ -369,10 +368,11 @@ function updateContact(){
 	document.getElementById('email').value = '';
 	document.getElementById('birthDate').value = '';
 	document.getElementById('address').value = '';
+	document.getElementById('addContactResult').innerHTML = "";
 	searchContacts();
 	
 	//Click close to close modal
-	document.getElementById("closeButtonEdit").click();
+	document.getElementById("editContactResult").click();
 	
 }
 

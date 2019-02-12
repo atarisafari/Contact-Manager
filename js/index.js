@@ -327,8 +327,8 @@ function deleteContact(contactID, row) {
 	xhr.open("POST", baseURL + "/deleteContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(payload));
-	document.getElementById("contactsTable").deleteRow(row.parentNode.rowIndex);
-	//searchContacts();
+	//document.getElementById("contactsTable").deleteRow(row.parentNode.rowIndex);
+	searchContacts();
 }
 
 
@@ -357,7 +357,7 @@ function buildTableData(data)
 		
 		// Create the show more button
   		var button = document.createElement('button');
- 		button.id = data[i].contact_id;
+ 		button.id = i;//data[i].contact_id;
   		var buttonName = document.createTextNode("More");
   		button.appendChild(buttonName);
   		button.className += "btn btn-info";

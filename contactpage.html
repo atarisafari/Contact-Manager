@@ -73,7 +73,7 @@
       </div>
         <div class="modal-footer">
 	  <p id="addContactResult"><p>
-      	  <button type="button" class="btn btn-primary" onclick="addContact()" data-dismiss="modal">Add</button>
+      	  <button type="button" class="btn btn-primary" onclick="addContact()">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -127,8 +127,8 @@
       </div>
         <div class="modal-footer">
 	  <p id="editContactResult"><p>
-	  <button type="button" class="btn btn-danger" onclick="deleteContact()" data-dismiss="modal">Delete</button>
-      	  <button type="button" class="btn btn-primary" onclick="updateContact()" data-dismiss="modal">Save</button>
+	  <!--<button type="button" class="btn btn-danger" onclick="deleteContact()" data-dismiss="modal">Delete</button>-->
+      	  <button type="button" class="btn btn-primary" onclick="updateContact()">Save</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -164,16 +164,18 @@
 </div>
 
   <!--table info down here-->
-  <table class="table" id="contactsTable" >
-	<thead>
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Phone Number</th>
-			<th id="deleteHeader" style="display:none; visibility:hidden;">Delete</th>
-		</tr>
-	</thead>
+<table class="table" id="contactsTable" >
+<thead>
+<tr>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Phone Number</th>
+	<th id="showHeader" role="button" data-toggle="modal" data-target="#myModalEdit" style="display:none; visibility:hidden;" >Show</th>
+	<th id="deleteHeader" style="display:none; visibility:hidden;">Delete</th>
+</tr>
+</thead>
 </table>
+<a id="addButton" role="button" aria-pressed="true" data-toggle="modal" data-target="#myModal">Add</a>
   <!--<div class="table" id="contactsTable">
  	<div class="tableRow">
  		<div class="tableColumn contactListHeader">Name</div>

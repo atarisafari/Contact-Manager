@@ -357,6 +357,7 @@ function buildTableData(data)
 		//showButton = document.createElement('button');
 		//showButton.innerHTML = 'More';
 		
+		/*
 		// Create the show more button
   		var button = document.createElement('button');
  		button.id = i*2;//data[i].contact_id;
@@ -367,17 +368,18 @@ function buildTableData(data)
  		showButton.appendChild(button);
 		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
 		document.getElementById(button.id).onclick = function() {diplayContact(data[i])};
+		*/
 		
 		// Create the delete button
   		var dButton = document.createElement('button');
- 		dButton.id = i*2 +1; //data[i].contact_id;
+ 		dButton.id = i+1; //data[i].contact_id;
   		var dName = document.createTextNode("Delete");
   		dButton.appendChild(dName);
   		dButton.className += "btn btn-danger";
  		// Append the delete button
  		deleteButton.appendChild(dButton);
 		//deleteButton.addEventListener("click",deleteContact(data[i].contact_id, (i+1)));
-		document.getElementById(dButton.id).onclick = function() {deleteContact(i+1)};
+		//document.getElementById(dButton.id).onclick = function() {deleteContact(i+1)};
 		
 
 //		showButton.id = "showButton";
@@ -419,6 +421,8 @@ function buildTableData(data)
 //         	deleteButton.style.display = "none";
 //         	deleteButton.className = "deleteButton";
 	}
+	
+	document.getElementById(dButton.id).onclick = function() {deleteContact(dButton.id)};
 	
 }
 

@@ -80,3 +80,16 @@
 .contactListHeader{
 	color: black;
 }
+
+.table{
+	width: 100%;
+}
+
+tr:hover{
+	background-color: #f5f5f5;
+}
+
+th{
+  background-color: #0C1714;
+  color: white;
+}

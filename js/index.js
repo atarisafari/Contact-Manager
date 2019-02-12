@@ -316,7 +316,6 @@ function deleteMultipleContacts()
 
 //	No checkbox
 function deleteContact(contactID, row) {
-	var i = row.parentNode.parentNode.rowIndex;
   	
 	console.log("Deleting: " + localStorage.contactID);
 	//var payload = '{"userID" : "' + userID + '", "contactID" : "' + contactID + '"}';
@@ -328,8 +327,7 @@ function deleteContact(contactID, row) {
 	xhr.open("POST", baseURL + "/deleteContact.php", true);
 	xhr.setRequestHeader("Content-type", "application/json; charset = UTF-8");
 	xhr.send(JSON.stringify(payload));
-	//document.getElementById("contactsTable").deleteRow(row.parentNode.rowIndex);
-	document.getElementById("contactsTable").deleteRow(i);
+	document.getElementById("contactsTable").deleteRow(row.parentNode.rowIndex);
 	//searchContacts();
 }
 

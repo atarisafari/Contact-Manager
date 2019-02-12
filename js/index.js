@@ -344,8 +344,8 @@ function buildTableData(data)
 		var firstName = row.insertCell(0);
 		var lastName = row.insertCell(1);
 		var phoneNumber = row.insertCell(2);
-		var showButton = row.insertCell(3);
-		var deleteButton = row.insertCell(4);
+		//var showButton = row.insertCell(3);
+		var deleteButton = row.insertCell(3);
 		
 		firstName.innerHTML = data[i].first_name;
 		lastName.innerHTML = data[i].last_name;
@@ -354,15 +354,14 @@ function buildTableData(data)
 		
 		
 		// Create the show more button
-  		var button = document.createElement('button');
- 		button.id = i;//data[i].contact_id;
-  		var buttonName = document.createTextNode("More");
-  		button.appendChild(buttonName);
-  		button.className += "btn btn-info";
- 		// Append the show more button
- 		showButton.appendChild(button);
-		//showButton.addEventListener("click", diplayContact(data[i], data[i].contact_id));
-		document.getElementById(button.id).onclick = function() {diplayContact(data[i])};
+//   		var button = document.createElement('button');
+//  		button.id = i;//data[i].contact_id;
+//   		var buttonName = document.createTextNode("More");
+//   		button.appendChild(buttonName);
+//   		button.className += "btn btn-info";
+//  		// Append the show more button
+//  		showButton.appendChild(button);
+// 		document.getElementById(button.id).onclick = function() {diplayContact(data[i])};
 	
 		
 		// Create the delete button

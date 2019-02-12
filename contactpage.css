@@ -82,3 +82,11 @@ margin:2px;
 .contactListHeader{
 	color: black;
 }
+
+#myModal{
+	color: black;
+}
+
+#addContactResult{
+	color: red;
+}

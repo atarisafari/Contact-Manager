@@ -183,9 +183,9 @@ function addContact() {
    	var address = document.getElementById('address').value;
 
 	if(!firstname | !lastname) {
-		console.log("Must fill out firstname and lastname in order to add a contact");
+		console.log("Contact must have a First and Last Name");
 		var errorMessage = document.getElementById('addContactResult');
-		errorMessage.innerHTML = "Must fill out firstname and lastname in order to add a contact";
+		errorMessage.innerHTML = "Contact must have a First and Last Name";
 		return;
 	}
 	
@@ -344,9 +344,9 @@ function updateContact(){
    	var address = document.getElementById('addressEdit').value;
 
 	if(!firstname | !lastname) {
-		console.log("Contacts must have a First name and Lastname");
+		console.log("Contact must have a First and Last Name");
 		var errorMessage = document.getElementById('editContactResult');
-		errorMessage.innerHTML = "Contacts must have a First name and Lastname";
+		errorMessage.innerHTML = "Contact must have a First and Last Name";
 		return;
 	}
 	

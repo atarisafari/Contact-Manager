@@ -400,20 +400,20 @@ function diplayContact(contact){
 // 	var popup = document.getElementById('myModalEdit');
 // 	popup.classList.toggle("show");
 	//Errase inputboxes
-	document.getElementById('firstNameEdit').innerHTML = "";
-	document.getElementById('lastNameEdit').innerHTML = "";
-	document.getElementById('phoneNumberEdit').innerHTML = "";
-	document.getElementById('birthDateEdit').innerHTML = "";
-	document.getElementById('emailEdit').innerHTML = "";
-	document.getElementById('addressEdit').innerHTML = "";
-	document.getElementById('editContactResult').innerHTML = "";
+	document.getElementById('firstNameEdit').value = "";
+	document.getElementById('lastNameEdit').value = "";
+	document.getElementById('phoneNumberEdit').value = "";
+	document.getElementById('birthDateEdit').value = "";
+	document.getElementById('emailEdit').value = "";
+	document.getElementById('addressEdit').value = "";
+	document.getElementById('editContactResult').value = "";
 	//Write contacts information
-	document.getElementById('firstNameEdit').innerHTML = contact['first_name'];
-	document.getElementById('lastNameEdit').innerHTML = contact['last_name'];
-	document.getElementById('phoneNumberEdit').innerHTML = contact['phone_number'];
-	document.getElementById('birthDateEdit').innerHTML = contact['birth_date'];
-	document.getElementById('emailEdit').innerHTML = contact['email_address'];
-	document.getElementById('addressEdit').innerHTML = contact['address'];
+	document.getElementById('firstNameEdit').value = contact['first_name'];
+	document.getElementById('lastNameEdit').value = contact['last_name'];
+	document.getElementById('phoneNumberEdit').value = contact['phone_number'];
+	document.getElementById('birthDateEdit').value = contact['birth_date'];
+	document.getElementById('emailEdit').value = contact['email_address'];
+	document.getElementById('addressEdit').value = contact['address'];
 	localStorage.contactID = contact['contact_id'];
 }
 

@@ -419,7 +419,7 @@ function buildTableData(data)
 //         	deleteButton.className = "deleteButton";
 	}
 	
-	document.getElementById(dButton.id).onclick = function() {deleteContact(this.id)};
+	//document.getElementById(dButton.id).onclick = function() {deleteContact(this.id)};
 	
 }
 

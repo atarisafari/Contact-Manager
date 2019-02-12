@@ -261,7 +261,9 @@ function clearContacts(){
 		table.deleteRow(-1);
 	}
 }
-
+function clearError(errorID){
+	document.getElementById(errorID).innerHTML = "";
+}
 
 //	No checkbox
 function deleteContact(contactID, row) {
